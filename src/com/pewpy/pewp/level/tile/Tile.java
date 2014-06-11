@@ -29,7 +29,7 @@ public class Tile {
 	public static Tile riverturn = new Tile(Sprite.riverturn);
 	public static Tile riverhor = new Tile(Sprite.riverhor);
 	
-	//hallo
+	//test
 	
 	public Tile(Sprite sprite) {
 		this.sprite = sprite;
