@@ -28,7 +28,7 @@ public class Sprite {
 	public static Sprite riververt = new Sprite(16,2,5,SpriteSheet.forest);
 	public static Sprite riverturn = new Sprite(16,2,6,SpriteSheet.forest);
 	public static Sprite riverhor = new Sprite(16,3,5,SpriteSheet.forest);
-	
+	public static Sprite log = new Sprite(16,2,3,SpriteSheet.forest);
 	
 	
 	
