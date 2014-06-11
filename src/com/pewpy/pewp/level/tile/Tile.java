@@ -30,7 +30,7 @@ public class Tile {
 	public static Tile riverhor = new Tile(Sprite.riverhor);
 	public static Tile log = new Tile(Sprite.log);
 
-	//all i wanted was a 10dollas
+	//all she needed was some
 	public Tile(Sprite sprite) {
 		this.sprite = sprite;
 	}
