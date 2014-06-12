@@ -37,7 +37,12 @@ public abstract class Mob extends Entity {
 
 	private boolean collision(int xa, int ya) {
 		boolean solid = false;
-		if(level.getTile((x+xa)/16,(y+ya)/16).solid()) solid = true;
+		for(int i = 0; i < 4; i++){
+			int xt = ((x+xa) + i % 2 * 10 + 2 ) / 16;
+			int yt = ((y+ya) + i / 2 * 10 + 5 )/ 16;
+			if(level.getTile(xt,yt).solid()) solid = true;
+		}
+		
 		return solid;
 	}
 	
