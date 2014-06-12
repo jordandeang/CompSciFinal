@@ -115,7 +115,7 @@ public class Game extends Canvas implements Runnable {
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 		g.dispose();
 		bs.show();
-
+		//test
 	}
 
 	public static void main(String[] args) {
