@@ -29,13 +29,13 @@ public class Sprite {
 	public static Sprite riverturn = new Sprite(16,2,6,SpriteSheet.forest);
 	public static Sprite riverhor = new Sprite(16,3,5,SpriteSheet.forest);
 	public static Sprite log = new Sprite(16,2,3,SpriteSheet.forest);
-	public static Sprite mesh1 = new Sprite(16, 0, 0, SpriteSheet.forest);
-	public static Sprite mesh2 = new Sprite(16, 1, 0, SpriteSheet.forest);
-	public static Sprite mesh3 = new Sprite(16, 0, 1, SpriteSheet.forest);
-	public static Sprite mesh4 = new Sprite(16, 1, 1, SpriteSheet.forest);
-	public static Sprite mesh5 = new Sprite(16, 0, 2, SpriteSheet.forest);
-	public static Sprite mesh6 = new Sprite(16, 1, 2, SpriteSheet.forest);
-	public static Sprite mesh7 = new Sprite(16, 0, 5, SpriteSheet.forest);
+	public static Sprite mesh1 = new Sprite(16, 0, 0, SpriteSheet.foresttiles_0);
+	public static Sprite mesh2 = new Sprite(16, 1, 0, SpriteSheet.foresttiles_0);
+	public static Sprite mesh3 = new Sprite(16, 0, 1, SpriteSheet.foresttiles_0);
+	public static Sprite mesh4 = new Sprite(16, 1, 1, SpriteSheet.foresttiles_0);
+	public static Sprite mesh5 = new Sprite(16, 0, 2, SpriteSheet.foresttiles_0);
+	public static Sprite mesh6 = new Sprite(16, 1, 2, SpriteSheet.foresttiles_0);
+	public static Sprite mesh7 = new Sprite(16, 0, 5, SpriteSheet.foresttiles_0);
 	
 	
 	
