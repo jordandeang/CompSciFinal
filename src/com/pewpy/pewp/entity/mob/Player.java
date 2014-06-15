@@ -9,6 +9,7 @@ public class Player extends Mob {
 	private Sprite sprite;
 	private int animate = 0;
 	private boolean walking = false;
+	private double battleCounter = 0;
 	
 	public Player(Keyboard input) {
 		this.input = input;
@@ -29,6 +30,10 @@ public class Player extends Mob {
 		if(input.down) ya++;
 		if(input.left) xa--;
 		if(input.right) xa++;
+		battleCounter = Math.random()* 22000;
+		if (battleCounter <= 20){
+			System.out.println("IN BATTLE");
+		}
 		
 		if(xa != 0 || ya != 0){
 			move(xa, ya);
