@@ -1,4 +1,5 @@
 package com.pewpy.pewp.entity.mob;
+import com.pewpy.pewp.Game;
 import com.pewpy.pewp.graphics.Screen;
 import com.pewpy.pewp.graphics.Sprite;
 import com.pewpy.pewp.input.Keyboard;
@@ -32,7 +33,7 @@ public class Player extends Mob {
 		if(input.right) xa++;
 		battleCounter = Math.random()* 22000;
 		if (battleCounter <= 20){
-			System.out.println("IN BATTLE");
+			Game.inBattle = true;
 		}
 		
 		if(xa != 0 || ya != 0){

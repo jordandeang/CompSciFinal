@@ -34,7 +34,7 @@ public class Game extends Canvas implements Runnable {
 	private Keyboard key;
 	private Level level;
 	private Player player;
-	private boolean inBattle;
+	public static boolean inBattle;
 
 	public Game() {
 		Dimension size = new Dimension(width * scale, height * scale);
@@ -107,10 +107,12 @@ public class Game extends Canvas implements Runnable {
 			return;
 		}
 		screen.clear();
+		if (!inBattle){
 		int xScroll = player.x-screen.width / 2;
 		int yScroll = player.y-screen.height / 2;
 		level.render(xScroll, yScroll, screen);
 		player.render(screen);
+		}
 		for (int i = 0; i < pixels.length; i++) {
 			pixels[i] = screen.pixels[i];
 		}
