@@ -34,6 +34,7 @@ public class Game extends Canvas implements Runnable {
 	private Keyboard key;
 	private Level level;
 	private Player player;
+	private boolean inBattle;
 
 	public Game() {
 		Dimension size = new Dimension(width * scale, height * scale);
