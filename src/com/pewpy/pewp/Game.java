@@ -14,6 +14,7 @@ import com.pewpy.pewp.graphics.Screen;
 import com.pewpy.pewp.input.Keyboard;
 import com.pewpy.pewp.level.Level;
 import com.pewpy.pewp.level.LevelOne;
+import com.pewpy.pewp.level.tile.TileCoord;
 
 public class Game extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
@@ -40,8 +41,10 @@ public class Game extends Canvas implements Runnable {
 		frame = new JFrame();
 		screen = new Screen(width, height);
 		key = new Keyboard();
+		TileCoord playerSpawn = new TileCoord(16,3);
 		level = new LevelOne("/textures/test.png");
-		player = new Player(key);
+		player = new Player(playerSpawn.x(), playerSpawn.y(),key);
+		player.init(level);
 		addKeyListener(key);
 	}
 
@@ -115,7 +118,7 @@ public class Game extends Canvas implements Runnable {
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 		g.dispose();
 		bs.show();
-
+		//test
 	}
 
 	public static void main(String[] args) {
