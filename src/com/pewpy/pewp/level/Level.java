@@ -93,6 +93,7 @@ public class Level {
 		if (tiles[x + y * width] == 0xff437fc3) return Tile.riverturn;
 		if (tiles[x + y * width] == 0xff1a569b) return Tile.riverhor;
 		if (tiles[x + y * width] == 0xff1a9b32) return Tile.forestmiddle;
+		if (tiles[x + y * width] == 0xff000000) return Tile.voidTile;
 		return Tile.voidTile;
 	}
 }
