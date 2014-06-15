@@ -16,12 +16,12 @@ public class Battle {
 		
 	}
 	public void enterBattleAnimation(){
-		if (animationCounter == 120){
+		if (animationCounter == 180){
 			animationCounter = 0;
 			inBattleAnimation = false;
 		}
 		inBattleAnimation = true;
-		if (animationCounter < 120){
+		if (animationCounter < 180){
 			animationCounter++;
 		}
 	

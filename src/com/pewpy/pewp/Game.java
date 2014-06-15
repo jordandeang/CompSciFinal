@@ -18,6 +18,7 @@ import com.pewpy.pewp.input.Keyboard;
 import com.pewpy.pewp.level.Level;
 import com.pewpy.pewp.level.LevelOne;
 import com.pewpy.pewp.level.tile.TileCoord;
+import com.pewpy.pewp.sound.Sound;
 
 public class Game extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
@@ -39,6 +40,7 @@ public class Game extends Canvas implements Runnable {
 	private Player player;
 	public static boolean inBattle;
 	public Battle currentBattle;
+	public static Sound sound;
 
 	public Game() {
 		Dimension size = new Dimension(width * scale, height * scale);
@@ -104,8 +106,11 @@ public class Game extends Canvas implements Runnable {
 		if (inBattle) {
 			currentBattle = new Battle();
 			if (currentBattle.inBattleAnimation) {
-				for (int i = (pixels.length* (currentBattle.animationCounter-1))/120;i < (pixels.length* currentBattle.animationCounter)/120; i++) {
+				for (int i = (pixels.length* (currentBattle.animationCounter-1))/180;i < (pixels.length* currentBattle.animationCounter)/180; i++) {
 					pixels[i] = 0xff000000;
+					if (pixels[pixels.length-1] ==0xff000000){
+						currentBattle.inBattleAnimation = false;
+					}
 				}
 			}
 		} else {
