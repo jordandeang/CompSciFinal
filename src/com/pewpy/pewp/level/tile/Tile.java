@@ -29,13 +29,7 @@ public class Tile {
 	public static Tile riverturn = new Tile(Sprite.riverturn);
 	public static Tile riverhor = new Tile(Sprite.riverhor);
 	public static Tile log = new Tile(Sprite.log);
-<<<<<<< HEAD
 
-
-=======
-	
-	
->>>>>>> 4ea356e4a0aa87cc3e18e6cc35ba0bd5fc4fd5b6
 	public Tile(Sprite sprite) {
 		this.sprite = sprite;
 	}
