@@ -12,7 +12,7 @@ public class SpriteSheet {
 	public static SpriteSheet tiles = new SpriteSheet(
 			"/textures/sprite_sheet.png", 256);
 	public static SpriteSheet characters = new SpriteSheet(
-			"/textures/char_sprite_sheet", 256);
+			"/textures/char_sprite_sheet.png", 256);
 	public static SpriteSheet forest = new SpriteSheet("/textures/forest.png", 256);
 	
 	public SpriteSheet(String path, int size) {
