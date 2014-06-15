@@ -1,6 +1,7 @@
 package com.pewpy.pewp;
 
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
@@ -8,6 +9,8 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 
 import javax.swing.JFrame;
+
+import battle.Battle;
 
 import com.pewpy.pewp.entity.mob.Player;
 import com.pewpy.pewp.graphics.Screen;
@@ -35,6 +38,7 @@ public class Game extends Canvas implements Runnable {
 	private Level level;
 	private Player player;
 	public static boolean inBattle;
+	public Battle currentBattle;
 
 	public Game() {
 		Dimension size = new Dimension(width * scale, height * scale);
@@ -42,9 +46,9 @@ public class Game extends Canvas implements Runnable {
 		frame = new JFrame();
 		screen = new Screen(width, height);
 		key = new Keyboard();
-		TileCoord playerSpawn = new TileCoord(16,3);
+		TileCoord playerSpawn = new TileCoord(16, 3);
 		level = new LevelOne("/textures/test.png");
-		player = new Player(playerSpawn.x(), playerSpawn.y(),key);
+		player = new Player(playerSpawn.x(), playerSpawn.y(), key);
 		player.init(level);
 		addKeyListener(key);
 	}
@@ -96,8 +100,19 @@ public class Game extends Canvas implements Runnable {
 	}
 
 	private void tick() {
-		key.update();
-		player.update();
+
+		if (inBattle) {
+			currentBattle = new Battle();
+			if (currentBattle.inBattleAnimation) {
+				for (int i = (pixels.length* (currentBattle.animationCounter-1))/120;i < (pixels.length* currentBattle.animationCounter)/120; i++) {
+					pixels[i] = 0xff000000;
+				}
+			}
+		} else {
+			key.update();
+			player.update();
+		}
+
 	}
 
 	private void render() {
@@ -107,14 +122,15 @@ public class Game extends Canvas implements Runnable {
 			return;
 		}
 		screen.clear();
-		if (!inBattle){
-		int xScroll = player.x-screen.width / 2;
-		int yScroll = player.y-screen.height / 2;
-		level.render(xScroll, yScroll, screen);
-		player.render(screen);
-		}
-		for (int i = 0; i < pixels.length; i++) {
-			pixels[i] = screen.pixels[i];
+		if (!inBattle) {
+			int xScroll = player.x - screen.width / 2;
+			int yScroll = player.y - screen.height / 2;
+			level.render(xScroll, yScroll, screen);
+			player.render(screen);
+
+			for (int i = 0; i < pixels.length; i++) {
+				pixels[i] = screen.pixels[i];
+			}
 		}
 
 		Graphics g = bs.getDrawGraphics();
