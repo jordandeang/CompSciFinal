@@ -29,6 +29,14 @@ public class Tile {
 	public static Tile riverturn = new Tile(Sprite.riverturn);
 	public static Tile riverhor = new Tile(Sprite.riverhor);
 	public static Tile log = new Tile(Sprite.log);
+	public static Tile mesh1 = new Tile(Sprite.mesh1);
+	public static Tile mesh2 = new Tile(Sprite.mesh2);
+	public static Tile mesh3 = new Tile(Sprite.mesh3);
+	public static Tile mesh4 = new Tile(Sprite.mesh4);
+	public static Tile mesh5 = new Tile(Sprite.mesh5);
+	public static Tile mesh6 = new Tile(Sprite.mesh6);
+	public static Tile mesh7 = new Tile(Sprite.mesh7);
+	
 
 	public Tile(Sprite sprite) {
 		this.sprite = sprite;
