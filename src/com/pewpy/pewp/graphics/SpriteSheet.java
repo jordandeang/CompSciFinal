@@ -11,6 +11,8 @@ public class SpriteSheet {
 	public int[] pixels;
 	public static SpriteSheet tiles = new SpriteSheet(
 			"/textures/sprite_sheet.png", 256);
+	public static SpriteSheet characters = new SpriteSheet(
+			"/textures/char_sprite_sheet", 256);
 	public static SpriteSheet forest = new SpriteSheet("/textures/forest.png", 256);
 	public static SpriteSheet foresttiles_0 = new SpriteSheet("/textures/foresttiles_0.png", 256);
 	
