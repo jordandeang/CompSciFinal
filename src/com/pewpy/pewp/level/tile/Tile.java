@@ -6,7 +6,7 @@ import com.pewpy.pewp.graphics.Sprite;
 public class Tile {
 	public int x, y;
 	public Sprite sprite;
-	public static Tile grass = new GrassTile(Sprite.grass);
+
 	public static Tile voidTile = new VoidTile(Sprite.voidSprite);
 	public static TreeTile forestcorner1 = new TreeTile(Sprite.forestcorner1);
 	public static TreeTile foresttop = new TreeTile(Sprite.foresttop);

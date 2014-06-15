@@ -5,7 +5,7 @@ public class Sprite {
 	private int x, y;
 	public int[] pixels;
 	private SpriteSheet sheet;
-	public static Sprite grass = new Sprite(16, 0, 0, SpriteSheet.tiles);
+	
 	public static Sprite voidSprite = new Sprite(16, 0xff2E203C);
 
 	public static Sprite forestcorner1 = new Sprite(16,2,0,SpriteSheet.forest);
@@ -42,22 +42,22 @@ public class Sprite {
 	
 	
 	
-	public static Sprite player_forward = new Sprite(16,1,3, SpriteSheet.tiles);
-	public static Sprite player_right = new Sprite(16,1,4, SpriteSheet.tiles);
-	public static Sprite player_back = new Sprite(16,1,5, SpriteSheet.tiles);
-	public static Sprite player_left = new Sprite(16,1,6, SpriteSheet.tiles);
+	public static Sprite player_forward = new Sprite(18,1,0, SpriteSheet.characters);
+	public static Sprite player_right = new Sprite(18,1,1, SpriteSheet.characters);
+	public static Sprite player_back = new Sprite(18,1,2, SpriteSheet.characters);
+	public static Sprite player_left = new Sprite(18,1,3, SpriteSheet.characters);
 	
-	public static Sprite player_forward_1 = new Sprite(16,0,3, SpriteSheet.tiles);
-	public static Sprite player_forward_2 = new Sprite(16,2,3, SpriteSheet.tiles);
+	public static Sprite player_forward_1 = new Sprite(18,0,0, SpriteSheet.characters);
+	public static Sprite player_forward_2 = new Sprite(18,2,0, SpriteSheet.characters);
 	
-	public static Sprite player_right_1 = new Sprite(16,0,4, SpriteSheet.tiles);
-	public static Sprite player_right_2 = new Sprite(16,2,4, SpriteSheet.tiles);
+	public static Sprite player_right_1 = new Sprite(18,0,1, SpriteSheet.characters);
+	public static Sprite player_right_2 = new Sprite(18,2,1, SpriteSheet.characters);
 	
-	public static Sprite player_back_1 = new Sprite(16,0,5, SpriteSheet.tiles);
-	public static Sprite player_back_2 = new Sprite(16,2,5, SpriteSheet.tiles);
+	public static Sprite player_back_1 = new Sprite(18,0,2, SpriteSheet.characters);
+	public static Sprite player_back_2 = new Sprite(18,2,2, SpriteSheet.characters);
 	
-	public static Sprite player_left_1 = new Sprite(16,0,6, SpriteSheet.tiles);
-	public static Sprite player_left_2 = new Sprite(16,2,6, SpriteSheet.tiles);
+	public static Sprite player_left_1 = new Sprite(18,0,3, SpriteSheet.characters);
+	public static Sprite player_left_2 = new Sprite(18,2,3, SpriteSheet.characters);
 	
 	
 	
