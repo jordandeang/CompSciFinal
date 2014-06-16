@@ -26,6 +26,7 @@ public class Battle {
 	public Command[] commands;
 
 	public Battle(Keyboard key) {
+		battleQueue = new MyQueue();
 		this.key = key;
 		players = new Player[numberOfMobs];
 		enemies = new Enemy[numberOfMobs];
@@ -54,10 +55,11 @@ public class Battle {
 			players[i].renderInBattle(screen, i + 1);
 			enemies[i].renderInBattle(screen, i + 1);
 		}
-		screen.renderSelector(selectorNumber);
 		for (int j = 0; j < commands.length; j++){
 		commands[j].render(screen);
 		}
+		screen.renderSelector(selectorNumber);
+
 
 	}
 

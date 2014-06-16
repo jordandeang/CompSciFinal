@@ -181,10 +181,88 @@ public class Screen {
 	}
 
 	public void renderSelector(int position){
-		
+		if (position == 0){
+		for (int xa = 0; xa < Sprite.underline.SIZE; xa++) {
+			int xp = xa + 148;
+			for (int ya = 0; ya < Sprite.underline.SIZE; ya++) {
+				int yp = ya + 110;
+				int col = Sprite.underline.pixels[xa + ya * Sprite.underline.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		}
+		if (position == 1){
+		for (int xa = 0; xa < Sprite.underline.SIZE; xa++) {
+			int xp = xa + 198;
+			for (int ya = 0; ya < Sprite.underline.SIZE; ya++) {
+				int yp = ya + 110;
+				int col = Sprite.underline.pixels[xa + ya * Sprite.underline.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		}
+		if (position == 2){
+		for (int xa = 0; xa < Sprite.underline.SIZE; xa++) {
+			int xp = xa + 148;
+			for (int ya = 0; ya < Sprite.underline.SIZE; ya++) {
+				int yp = ya + 130;
+				int col = Sprite.underline.pixels[xa + ya * Sprite.underline.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		}
+		if (position == 3){
+		for (int xa = 0; xa < Sprite.underline.SIZE; xa++) {
+			int xp = xa + 198;
+			for (int ya = 0; ya < Sprite.underline.SIZE; ya++) {
+				int yp = ya + 130;
+				int col = Sprite.underline.pixels[xa + ya * Sprite.underline.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		}
 	}
 	public void renderCommand(Sprite sprite){
-		
+		for (int xa = 0; xa < Sprite.attack.SIZE; xa++) {
+			int xp = xa + 150;
+			for (int ya = 0; ya < Sprite.attack.SIZE; ya++) {
+				int yp = ya + 105;
+				int col = Sprite.attack.pixels[xa + ya * Sprite.attack.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		for (int xa = 0; xa < Sprite.spell.SIZE; xa++) {
+			int xp = xa + 200;
+			for (int ya = 0; ya < Sprite.spell.SIZE; ya++) {
+				int yp = ya + 105;
+				int col = Sprite.spell.pixels[xa + ya * Sprite.spell.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		for (int xa = 0; xa < Sprite.item.SIZE; xa++) {
+			int xp = xa + 150;
+			for (int ya = 0; ya < Sprite.item.SIZE; ya++) {
+				int yp = ya + 125;
+				int col = Sprite.item.pixels[xa + ya * Sprite.item.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		for (int xa = 0; xa < Sprite.defend.SIZE; xa++) {
+			int xp = xa + 200;
+			for (int ya = 0; ya < Sprite.defend.SIZE; ya++) {
+				int yp = ya + 125;
+				int col = Sprite.defend.pixels[xa + ya * Sprite.def.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
 	}
 	
 	public void setOffset(int xOffset, int yOffset) {
