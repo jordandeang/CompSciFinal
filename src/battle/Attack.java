@@ -11,14 +11,16 @@ public class Attack extends Command {
 	}
 	
 	public void render(Screen screen){
-		if(turnnumber == 1){
+		if(turnnumber == 0){
 			sprite = Sprite.sword;
 			damage = 10;
+		}else if(turnnumber == 1){
+			sprite = Sprite.wand;
+			damage = 10;
 		}else if(turnnumber == 2){
-			//sprite = Sprite.wand;
-		}else if(turnnumber == 3){
-			//sprite = Sprite.bow;
+			sprite = Sprite.bow;
+			damage = 10;
 		}
-		screen.attackRender(turnnumber);
+		screen.attackRender(turnnumber,sprite);
 	}
 }

@@ -79,7 +79,7 @@ public class Player extends Mob {
 			if (input.enter){
 
 				Battle.battleQueue.enqueue(new Attack(turnNumber));
-
+				
 				
 				isTurn=false;
 				Game.currentBattle.nextTurn();
