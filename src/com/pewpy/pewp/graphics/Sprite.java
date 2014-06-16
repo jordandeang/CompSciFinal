@@ -208,7 +208,6 @@ public class Sprite {
 	public static Sprite underline = new Sprite(36, 6, 1, SpriteSheet.characters);
 	public static Sprite boss = new Sprite(225,0,0,SpriteSheet.boss);
 
-	
 	public Sprite(int size, int x, int y, SpriteSheet sheet) {
 		SIZE = size;
 		this.x = x * size;

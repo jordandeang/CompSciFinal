@@ -183,6 +183,9 @@ public class Screen {
 	public void renderSelector(int position){
 		
 	}
+	public void renderCommand(Sprite sprite){
+		
+	}
 	
 	public void setOffset(int xOffset, int yOffset) {
 		this.xOffset = xOffset;
