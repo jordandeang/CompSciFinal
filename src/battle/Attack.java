@@ -13,7 +13,7 @@ public class Attack extends Command {
 	public void render(Screen screen){
 		if(turnnumber == 1){
 			sprite = Sprite.sword;
-			
+			damage = 10;
 		}else if(turnnumber == 2){
 			//sprite = Sprite.wand;
 		}else if(turnnumber == 3){
