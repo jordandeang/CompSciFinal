@@ -16,14 +16,14 @@ public class Player extends Mob {
 	
 	public Player(Keyboard input) {
 		this.input = input;
-		sprite = Sprite.player_forward;
+		sprite = Sprite.knight_forward;
 	}
 	
 	public Player(int x, int y, Keyboard input){
 		this.x = x;
 		this.y = y;
 		this.input = input;
-		sprite = Sprite.player_forward;
+		sprite = Sprite.knight_forward;
 	}
 	
 	public void update() {
@@ -53,43 +53,43 @@ public class Player extends Mob {
 	
 	public void render(Screen screen){
 		if(dir == 0) {
-			sprite = Sprite.player_forward;
+			sprite = Sprite.knight_forward;
 			if(walking) {
 				if(animate % 20 > 10) {
 					sprite = Sprite.player_forward_1;
 				}else{
-					sprite = Sprite.player_forward_2;
+					sprite = Sprite.knight_forward_2;
 				}
 			}
 		}
 		
 		if(dir == 1){
-			sprite = Sprite.player_right;
+			sprite = Sprite.knight_right;
 			if(walking) {
 				if(animate % 20 > 10) {
-					sprite = Sprite.player_right_1;
+					sprite = Sprite.knight_right_1;
 				}else{
-					sprite = Sprite.player_right_2;
+					sprite = Sprite.knight_right_2;
 				}
 			}
 		}
 		if(dir == 2) {
-			sprite = Sprite.player_back;
+			sprite = Sprite.knight_back;
 			if(walking) {
 				if(animate % 20 > 10) {
-					sprite = Sprite.player_back_1;
+					sprite = Sprite.knight_back_1;
 				}else{
-					sprite = Sprite.player_back_2;
+					sprite = Sprite.knight_back_2;
 				}
 			}
 		}
 		if(dir == 3) {
-			sprite = Sprite.player_left;
+			sprite = Sprite.knight_left;
 			if(walking) {
 				if(animate % 20 > 10) {
-					sprite = Sprite.player_left_1;
+					sprite = Sprite.knight_left_1;
 				}else{
-					sprite = Sprite.player_left_2;
+					sprite = Sprite.knight_left_2;
 				}
 			}
 		}
