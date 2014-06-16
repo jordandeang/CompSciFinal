@@ -200,16 +200,14 @@ public class Sprite {
 	public static Sprite knight_name = new Sprite(36, 2, 1, SpriteSheet.characters);
 	public static Sprite mage_name = new Sprite(36, 2, 3, SpriteSheet.characters);
 	public static Sprite archer_name = new Sprite(36, 2, 5, SpriteSheet.characters);
-<<<<<<< HEAD
+
 	public static Sprite attack = new Sprite(36, 5, 1, SpriteSheet.characters);
 	public static Sprite defend = new Sprite(36, 5, 3, SpriteSheet.characters);
 	public static Sprite spell = new Sprite(36, 5, 5, SpriteSheet.characters);
 	public static Sprite item = new Sprite(36, 0, 6, SpriteSheet.characters);
 	public static Sprite underline = new Sprite(36, 6, 1, SpriteSheet.characters);
-	
-=======
 	public static Sprite boss = new Sprite(225,0,0,SpriteSheet.boss);
->>>>>>> origin/master
+
 	
 	public Sprite(int size, int x, int y, SpriteSheet sheet) {
 		SIZE = size;
