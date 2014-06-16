@@ -4,9 +4,7 @@ public class Battle {
 
 	public static int animationCounter;
 	public static boolean inBattleAnimation;
-	public Battle(){
-		enterBattleAnimation();
-		
+	public Battle(){		
 	}
 	
 	public void update(){

@@ -48,11 +48,12 @@ public class Game extends Canvas implements Runnable {
 		frame = new JFrame();
 		screen = new Screen(width, height);
 		key = new Keyboard();
-		TileCoord playerSpawn = new TileCoord(3,3);
+		TileCoord playerSpawn = new TileCoord(8,12);
 		level = new LevelOne("/textures/LevelOne.png");
 		player = new Player(playerSpawn.x(), playerSpawn.y(), key);
 		player.init(level);
 		addKeyListener(key);
+		currentBattle = new Battle();
 	}
 
 	public synchronized void start() {
@@ -104,7 +105,7 @@ public class Game extends Canvas implements Runnable {
 	private void tick() {
 
 		if (inBattle) {
-			currentBattle = new Battle();
+			currentBattle.enterBattleAnimation();
 			if (currentBattle.inBattleAnimation) {
 				for (int i = (pixels.length* (currentBattle.animationCounter-1))/180;i < (pixels.length* currentBattle.animationCounter)/180; i++) {
 					pixels[i] = 0xff000000;
