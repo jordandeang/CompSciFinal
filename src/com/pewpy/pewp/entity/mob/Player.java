@@ -32,6 +32,7 @@ public class Player extends Mob {
 	public Player(int i) {
 		turnNumber = i;
 		sprite = Sprite.knight_right;
+		isTurn = false;
 	}
 
 	public void update() {

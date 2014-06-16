@@ -27,13 +27,13 @@ public class Battle {
 		players = new Player[numberOfMobs];
 		enemies = new Enemy[numberOfMobs];
 		for (int i = 0; i < players.length; i++){
-			players[i] = new Player(i+1);
+			players[i] = new Player(i);
 		}
 		for (int j = 0; j < players.length; j++){
 			enemies[j] = new Enemy((int) (Math.random()*3)+1, j+3);
 		}
 		pixels = new int[Game.width*Game.height];
-		turnCounter = 1;
+		setTurn(0);
 		load();
 
 	}
@@ -66,5 +66,20 @@ public class Battle {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public void setTurn(int t){
+		turnCounter = t;
+		for (int i = 0; i< numberOfMobs; i++){
+			if (players[i].turnNumber == turnCounter){
+				players[i].isTurn = true;
+			}
+			if (enemies[i].turnNumber == turnCounter){
+				enemies[i].isTurn = true;
+			}
+		}
+	}
+	public void nextTurn(){
+		turnCounter++;
+		setTurn(turnCounter);
 	}
 }

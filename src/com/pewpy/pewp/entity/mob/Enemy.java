@@ -10,6 +10,7 @@ int number;
 		turnNumber = q;
 		number = i;
 		sprite = Sprite.knight_right;
+		isTurn = false;
 	}
 	public void renderInBattle(Screen screen, int placement) {
 		int xa = Game.width-30-sprite.SIZE;
