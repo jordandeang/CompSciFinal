@@ -96,8 +96,11 @@ public class Battle {
 	}
 
 	public void nextTurn() {
+		if (turnCounter == 5)
+			turnCounter = 0;
 		turnCounter++;
 		setTurn(turnCounter);
+		System.out.println(turnCounter);
 	}
 
 	public void changeSelectorNumberRight() {
