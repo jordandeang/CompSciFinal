@@ -10,11 +10,11 @@ import com.pewpy.pewp.sound.Sound;
 
 public class Player extends Mob {
 
-	private Keyboard input;
-	private Sprite sprite;
+	protected Keyboard input;
+	protected Sprite sprite;
 
-	private boolean walking = false;
-	private double battleCounter = 0;
+	protected boolean walking = false;
+	protected double battleCounter = 0;
 	public static Sound sound;
 
 	public Player(Keyboard input) {
@@ -30,7 +30,6 @@ public class Player extends Mob {
 	}
 
 	public void update() {
-
 		int xa = 0, ya = 0;
 		if(animate < 7500) animate++; else animate = 0;
 		if(input.up) ya--;
