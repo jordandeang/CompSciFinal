@@ -13,6 +13,7 @@ public abstract class Mob extends Entity {
 	public int animate = 0;
 	public int turnNumber;
 	public boolean isTurn;
+	public int hp;
 
 	public void move(int xa, int ya) {
 		if (xa != 0 && ya != 0) {
