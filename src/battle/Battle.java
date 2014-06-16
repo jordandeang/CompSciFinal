@@ -17,18 +17,23 @@ public class Battle {
 	public static int animationCounter;
 	public static boolean inBattleAnimation;
 	public int[] pixels;
-	public Player player1,player2,player3;
-	public Mob mob1,mob2,mob3;
+	public Player[] players;
+	public Enemy[] enemies;
+	public static int numberOfMobs = 3;
 	private Keyboard key;
+	public int turnCounter;
 	
 	public Battle(){
-		player1 = new Player();
-		player2 = new Player();
-		player3 = new Player();
-		mob1 = new Enemy((int) (Math.random()*3)+1);
-		mob2= new Enemy((int) (Math.random()*3)+1);
-		mob3 = new Enemy((int) (Math.random()*3)+1);
+		players = new Player[numberOfMobs];
+		enemies = new Enemy[numberOfMobs];
+		for (int i = 0; i < players.length; i++){
+			players[i] = new Player(i+1);
+		}
+		for (int j = 0; j < players.length; j++){
+			enemies[j] = new Enemy((int) (Math.random()*3)+1, j+3);
+		}
 		pixels = new int[Game.width*Game.height];
+		turnCounter = 1;
 		load();
 
 	}
@@ -38,12 +43,10 @@ public class Battle {
 	public void render(Screen screen){
 
 		screen.renderBattle(pixels);
-		player1.renderInBattle(screen, 1);
-		player2.renderInBattle(screen, 2);
-		player3.renderInBattle(screen, 3);
-		mob1.renderInBattle(screen, 1);
-		mob2.renderInBattle(screen, 2);
-		mob3.renderInBattle(screen, 3);
+		for (int i = 0; i < numberOfMobs; i++){
+			players[i].renderInBattle(screen, 3-i);
+			enemies[i].renderInBattle(screen, 3-i);
+		}
 
 	}
 	public void enterBattleAnimation(){

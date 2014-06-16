@@ -6,7 +6,8 @@ import com.pewpy.pewp.graphics.Sprite;
 
 public class Enemy extends Mob{
 int number;
-	public Enemy(int i){
+	public Enemy(int i, int q){
+		turnNumber = q;
 		number = i;
 		sprite = Sprite.knight_right;
 	}
