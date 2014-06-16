@@ -40,6 +40,7 @@ public class Battle {
 		mob1.renderInBattle(screen, 1);
 		mob2.renderInBattle(screen, 2);
 		mob3.renderInBattle(screen, 3);*/
+
 	}
 	public void enterBattleAnimation(){
 		if (animationCounter < 180){

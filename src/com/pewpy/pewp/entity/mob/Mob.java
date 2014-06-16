@@ -54,18 +54,21 @@ public abstract class Mob extends Entity {
 		return solid;
 	}
 
-	/*public void renderInBattle(Screen screen, int i) {
-		int x = 200;
-		int y = 30;
-		sprite = Sprite.player_right;
-		if (animate % 20 > 10) {
-			sprite = Sprite.player_right_1;
-		} else {
-			sprite = Sprite.player_right_2;
+
+
+	public void renderInBattle(Screen screen, int i) {
+		if (i == 1) {
+			sprite = Sprite.knight_right;
+			if (animate % 20 > 10) {
+				sprite = Sprite.knight_right_1;
+			} else {
+				sprite = Sprite.knight_right_2;
+			}
+
 		}
 		screen.renderMobInBattle(sprite,x, y);
 	}
-*/
+
 	public void render() {
 
 	}
