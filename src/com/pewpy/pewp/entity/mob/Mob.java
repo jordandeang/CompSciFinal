@@ -1,5 +1,6 @@
 package com.pewpy.pewp.entity.mob;
 
+import com.pewpy.pewp.Game;
 import com.pewpy.pewp.entity.Entity;
 import com.pewpy.pewp.graphics.Screen;
 import com.pewpy.pewp.graphics.Sprite;
@@ -56,17 +57,8 @@ public abstract class Mob extends Entity {
 
 
 
-	public void renderInBattle(Screen screen, int i) {
-		if (i == 1) {
-			sprite = Sprite.knight_right;
-			if (animate % 20 > 10) {
-				sprite = Sprite.knight_right_1;
-			} else {
-				sprite = Sprite.knight_right_2;
-			}
+	public void renderInBattle(Screen screen, int place) {
 
-		}
-		screen.renderMobInBattle(sprite,x, y);
 	}
 
 	public void render() {

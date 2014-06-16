@@ -28,6 +28,7 @@ public class Player extends Mob {
 		this.input = input;
 		sprite = Sprite.knight_forward;
 	}
+
 	public Player() {
 		sprite = Sprite.knight_right;
 	}
@@ -45,7 +46,7 @@ public class Player extends Mob {
 				xa--;
 			if (input.right)
 				xa++;
-			battleCounter = 21; /* Math.random() * 1000;// 22000 */
+			battleCounter = Math.random() * 1000;// 22000
 			if (battleCounter <= 20) {
 				sound = new Sound(1);
 				System.out.println("IN BATTLE");
@@ -62,48 +63,47 @@ public class Player extends Mob {
 			}
 
 		}
-		
+
 	}
 
-	
-	public void render(Screen screen){
-		if(dir == 0) {
+	public void render(Screen screen) {
+		if (dir == 0) {
 			sprite = Sprite.knight_forward;
-			if(walking) {
-				if(animate % 20 > 10) {
+			if (walking) {
+				if (animate % 20 > 10) {
 					sprite = Sprite.knight_forward_1;
-				}else{
+				} else {
 					sprite = Sprite.knight_forward_2;
 				}
 			}
 		}
-		
-		if(dir == 1){
+
+		if (dir == 1) {
 			sprite = Sprite.knight_right;
-			if(walking) {
-				if(animate % 20 > 10) {
+			if (walking) {
+				if (animate % 20 > 10) {
 					sprite = Sprite.knight_right_1;
-				}else{
+				} else {
 					sprite = Sprite.knight_right_2;
 				}
 			}
 		}
-		if(dir == 2) {
+		if (dir == 2) {
 			sprite = Sprite.knight_back;
-			if(walking) {
-				if(animate % 20 > 10) {
+			if (walking) {
+				if (animate % 20 > 10) {
 					sprite = Sprite.knight_back_1;
-				}else{
+				} else {
 					sprite = Sprite.knight_back_2;
 				}
 			}
 		}
-		if(dir == 3) {
+		if (dir == 3) {
 			sprite = Sprite.knight_left;
-			if(walking) {
-				if(animate % 20 > 10) {
+			if (walking) {
+				if (animate % 20 > 10) {
 					sprite = Sprite.knight_left_1;
-				}else{
+				} else {
 					sprite = Sprite.knight_left_2;
 
 				}
@@ -113,14 +113,35 @@ public class Player extends Mob {
 	}
 
 	public void renderInBattle(Screen screen, int i) {
-		int xa = 20;
-		int ya = 20;
-		sprite = Sprite.knight_right;
-		if (animate % 20 > 10) {
+		int xa = 30;
+		int ya = (i * 25 - 10);
+		if (i == 1) {
 			sprite = Sprite.knight_right_1;
-		} else {
-			sprite = Sprite.knight_right_2;
+			if (animate % 30 < 10) {
+				sprite = Sprite.knight_right;
+			}
+			if (animate % 30 > 20) {
+				sprite = Sprite.knight_right_2;
+			}
 		}
-		screen.renderMobInBattle(sprite,xa, ya);
+		if (i == 2) {
+			sprite = Sprite.mage_right1;
+			if (animate % 30 < 10) {
+				sprite = Sprite.mage_right2;
+			}
+			if (animate % 30 > 20) {
+				sprite = Sprite.mage_right3;
+			}
+		}
+		if (i == 3) {
+			sprite = Sprite.archer_right1;
+			if (animate % 30 < 10) {
+				sprite = Sprite.archer_right2;
+			}
+			if (animate % 30 > 20) {
+				sprite = Sprite.archer_right3;
+			}
+		}
+		screen.renderMobInBattle(sprite, xa, ya);
 	}
 }
