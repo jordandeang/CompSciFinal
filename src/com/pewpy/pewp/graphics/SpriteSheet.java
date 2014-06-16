@@ -15,6 +15,7 @@ public class SpriteSheet {
 			"/textures/char_sprite_sheet.png", 252);
 	public static SpriteSheet forest = new SpriteSheet("/textures/forest.png", 256);
 	public static SpriteSheet foresttiles = new SpriteSheet("/textures/foresttiles.png", 256);
+	public static SpriteSheet boss = new SpriteSheet("/textures/boss_sprite.png",225);
 	
 	public SpriteSheet(String path, int size) {
 		this.path = path;

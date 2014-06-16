@@ -200,6 +200,7 @@ public class Sprite {
 	public static Sprite knight_name = new Sprite(36, 2, 1, SpriteSheet.characters);
 	public static Sprite mage_name = new Sprite(36, 2, 3, SpriteSheet.characters);
 	public static Sprite archer_name = new Sprite(36, 2, 5, SpriteSheet.characters);
+	public static Sprite boss = new Sprite(225,0,0,SpriteSheet.boss);
 	
 	public Sprite(int size, int x, int y, SpriteSheet sheet) {
 		SIZE = size;
