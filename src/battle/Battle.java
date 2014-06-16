@@ -36,12 +36,11 @@ public class Battle {
 		commands[2] = new Item();
 		commands[3] = new Defend();
 		selectorNumber = 0;
-		for (int i = 0; i < players.length; i++) {
+		for (int i = 0; i < numberOfMobs; i++) {
 			players[i] = new Player(i, key);
+			enemies[i] = new Enemy((int) (Math.random() * 3) + 1, i + 3);
 		}
-		for (int j = 0; j < players.length; j++) {
-			enemies[j] = new Enemy((int) (Math.random() * 3) + 1, j + 3);
-		}
+
 		pixels = new int[Game.width * Game.height];
 		setTurn(0);
 		load();
@@ -88,19 +87,28 @@ public class Battle {
 		for (int i = 0; i < numberOfMobs; i++) {
 			if (players[i].turnNumber == turnCounter) {
 				players[i].isTurn = true;
+			} else{
+				players[i].isTurn = false;
 			}
 			if (enemies[i].turnNumber == turnCounter) {
 				enemies[i].isTurn = true;
+			}else{
+				enemies[i].isTurn = false;
 			}
 		}
 	}
 
 	public void nextTurn() {
-		if (turnCounter == 5)
+	
+		if (turnCounter< 5){
+			turnCounter++;
+			setTurn(turnCounter);
+		}
+
+		if (turnCounter == 5){
 			turnCounter = 0;
-		turnCounter++;
-		setTurn(turnCounter);
-		System.out.println(turnCounter);
+			setTurn(turnCounter);
+		}		
 	}
 
 	public void changeSelectorNumberRight() {
