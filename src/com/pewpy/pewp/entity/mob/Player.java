@@ -77,7 +77,7 @@ public class Player extends Mob {
 			if (input.right)
 				Game.currentBattle.changeSelectorNumberRight();
 			if (input.enter){
-				Battle.battleQueue.enqueue(new Attack());
+				Battle.battleQueue.enqueue(new Attack(turnNumber));
 			}
 		}
 		System.out.println(Game.currentBattle.selectorNumber);
