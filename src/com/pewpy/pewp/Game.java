@@ -116,12 +116,11 @@ public class Game extends Canvas implements Runnable {
 					}
 				}
 			}
-			currentBattle.player1.update();
-			currentBattle.player2.update();
-			currentBattle.player3.update();
-			currentBattle.mob1.update();
-			currentBattle.mob2.update();
-			currentBattle.mob3.update();
+			for (int i = 0; i < currentBattle.numberOfMobs; i++){
+				currentBattle.players[i].update();
+				currentBattle.enemies[i].update();
+			}
+
 		} else {
 			key.update();
 			player.update();

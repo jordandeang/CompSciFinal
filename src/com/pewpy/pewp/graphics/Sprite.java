@@ -195,6 +195,11 @@ public class Sprite {
 	public static Sprite pirate_cast3 = new Sprite(18,12,9,SpriteSheet.characters);
 	public static Sprite pirate_cast4 = new Sprite(18,13,9,SpriteSheet.characters);
 	
+	public static Sprite pointer_right = new Sprite(18, 0, 13, SpriteSheet.characters);
+	public static Sprite pointer_left = new Sprite(18, 1, 13, SpriteSheet.characters);
+	public static Sprite knight_name = new Sprite(36, 2, 1, SpriteSheet.characters);
+	public static Sprite mage_name = new Sprite(36, 2, 3, SpriteSheet.characters);
+	public static Sprite archer_name = new Sprite(36, 2, 5, SpriteSheet.characters);
 	
 	public Sprite(int size, int x, int y, SpriteSheet sheet) {
 		SIZE = size;

@@ -6,9 +6,12 @@ import com.pewpy.pewp.graphics.Sprite;
 
 public class Enemy extends Mob{
 int number;
-	public Enemy(int i){
+	public Enemy(int i, int q){
+		turnNumber = q;
 		number = i;
 		sprite = Sprite.knight_right;
+		isTurn = false;
+		hp = 100;
 	}
 	public void renderInBattle(Screen screen, int placement) {
 		int xa = Game.width-30-sprite.SIZE;
@@ -40,7 +43,7 @@ int number;
 				sprite = Sprite.pirate_left3;
 			}
 		}
-		screen.renderMobInBattle(sprite, xa, ya);
+		screen.renderMobInBattle(sprite, xa, ya, isTurn);
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.pewpy.pewp.graphics;
 
+import java.awt.Color;
 import java.util.Random;
 
 import com.pewpy.pewp.level.tile.Tile;
@@ -60,15 +61,18 @@ public class Screen {
 		}
 	}
 
-	public void renderMobInBattle(Sprite sprite, int x, int y) {
-		for (int xa = 0; xa< sprite.SIZE; xa++) {
-			int xp = xa+x;
+	public void renderMobInBattle(Sprite sprite, int x, int y, boolean turnCheck) {
+		for (int xa = 0; xa < sprite.SIZE; xa++) {
+			int xp = xa + x;
 			for (int ya = 0; ya < sprite.SIZE; ya++) {
-				int yp = ya+y;
+				int yp = ya + y;
 				int col = sprite.pixels[xa + ya * sprite.SIZE];
 				if (col != 0xFF7bd5fe)
 					pixels[xp + yp * width] = col;
 			}
+		}
+		if (turnCheck) {
+			renderTurnIndicator(x,y);
 		}
 
 	}
@@ -81,8 +85,104 @@ public class Screen {
 		}
 	}
 
+	public void renderTurnIndicator(int x, int y) {
+		if (x < 150){
+		for (int xa = 0; xa < Sprite.pointer_right.SIZE; xa++) {
+			int xp = xa + x-16;
+			for (int ya = 0; ya < Sprite.pointer_right.SIZE; ya++) {
+				int yp = ya + y;
+				int col = Sprite.pointer_right.pixels[xa + ya * Sprite.pointer_right.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		}
+		if (x > 150){
+		for (int xa = 0; xa < Sprite.pointer_left.SIZE; xa++) {
+			int xp = xa + x+16;
+			for (int ya = 0; ya < Sprite.pointer_left.SIZE; ya++) {
+				int yp = ya + y;
+				int col = Sprite.pointer_left.pixels[xa + ya * Sprite.pointer_left.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		}
+	}
+	public void renderNameAndHealthBar(int h){
+		for (int xa = 0; xa < Sprite.knight_name.SIZE; xa++) {
+			int xp = xa + 20;
+			for (int ya = 0; ya < Sprite.knight_name.SIZE; ya++) {
+				int yp = ya + 90;
+				int col = Sprite.knight_name.pixels[xa + ya * Sprite.knight_name.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		for (int xa = 0; xa < Sprite.mage_name.SIZE; xa++) {
+			int xp = xa + 20;
+			for (int ya = 0; ya < Sprite.mage_name.SIZE; ya++) {
+				int yp = ya + 106;
+				int col = Sprite.mage_name.pixels[xa + ya * Sprite.mage_name.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		for (int xa = 0; xa < Sprite.archer_name.SIZE; xa++) {
+			int xp = xa + 20;
+			for (int ya = 0; ya < Sprite.archer_name.SIZE; ya++) {
+				int yp = ya + 122;
+				int col = Sprite.archer_name.pixels[xa + ya * Sprite.archer_name.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		for (int x = 59; x < 61 + (60*h/100); x++) {
+			for (int y = 122; y <129 ; y++) {
+				pixels[x + y * width] = 0xffC0C0C0;
+			}
+		}
+		for (int x = 59; x < 61 + (60*h/100); x++) {
+			for (int y = 137; y <144 ; y++) {
+				pixels[x + y * width] = 0xffC0C0C0;
+			}
+		}
+		
+		for (int x = 59; x < 61 + (60*h/100); x++) {
+			for (int y = 107; y <114 ; y++) {
+				pixels[x + y * width] = 0xffC0C0C0;
+			}
+		}
+		for (int x = 59; x < 61 + (60*h/100); x++) {
+			for (int y = 122; y <129 ; y++) {
+				pixels[x + y * width] = 0xffC0C0C0;
+			}
+		}
+		for (int x = 59; x < 61 + (60*h/100); x++) {
+			for (int y = 137; y <144 ; y++) {
+				pixels[x + y * width] = 0xffC0C0C0;
+			}
+		}
+		for (int x = 60; x < 60 + (60*h/100); x++) {
+			for (int y = 108; y <113 ; y++) {
+				pixels[x + y * width] = 0xffFF0000;
+			}
+		}
+		for (int x = 60; x < 60 + (60*h/100); x++) {
+			for (int y = 123; y <128 ; y++) {
+				pixels[x + y * width] = 0xffFF0000;
+			}
+		}
+		for (int x = 60; x < 60 + (60*h/100); x++) {
+			for (int y = 138; y <143 ; y++) {
+				pixels[x + y * width] = 0xffFF0000;
+			}
+		}
+	}
+
 	public void setOffset(int xOffset, int yOffset) {
 		this.xOffset = xOffset;
 		this.yOffset = yOffset;
 	}
+	
 }

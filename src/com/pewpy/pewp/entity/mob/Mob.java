@@ -11,6 +11,9 @@ public abstract class Mob extends Entity {
 	protected int dir = 0;
 	protected boolean moving = false;
 	public int animate = 0;
+	public int turnNumber;
+	public boolean isTurn;
+	public int hp;
 
 	public void move(int xa, int ya) {
 		if (xa != 0 && ya != 0) {
@@ -64,4 +67,5 @@ public abstract class Mob extends Entity {
 	public void render() {
 
 	}
+
 }
