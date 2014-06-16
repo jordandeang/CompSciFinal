@@ -142,7 +142,6 @@ public class Game extends Canvas implements Runnable {
 			
 		} 
 		if (inBattle && !currentBattle.inBattleAnimation){
-			System.out.println("in battle and no longer in battle animation");
 			currentBattle.render(screen);
 			for (int i = 0; i < pixels.length; i++) {
 				pixels[i] = screen.pixels[i];

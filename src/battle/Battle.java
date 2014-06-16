@@ -36,7 +36,7 @@ public class Battle {
 	
 	
 	public void render(Screen screen){
-		System.out.println("battle.render");
+
 		screen.renderBattle(pixels);
 		player1.renderInBattle(screen, 1);
 	/*	player2.renderInBattle(screen, 2);

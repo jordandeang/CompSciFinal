@@ -138,7 +138,6 @@ public class Player extends Mob {
 	public void renderInBattle(Screen screen, int i) {
 		int xa = 20;
 		int ya = 20;
-		System.out.println("player.renderInBattle");
 		sprite = Sprite.knight_right;
 		if (animate % 20 > 10) {
 			sprite = Sprite.knight_right_1;

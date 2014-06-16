@@ -61,7 +61,6 @@ public class Screen {
 	}
 
 	public void renderMobInBattle(Sprite sprite, int x, int y) {
-		System.out.println("rendering mob in battle");
 		for (int xa = 0; xa< sprite.SIZE; xa++) {
 			int xp = xa+x;
 			for (int ya = 0; ya < sprite.SIZE; ya++) {
