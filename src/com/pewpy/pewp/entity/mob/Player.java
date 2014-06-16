@@ -57,7 +57,7 @@ public class Player extends Mob {
 				xa--;
 			if (input.right)
 				xa++;
-			battleCounter = Math.random() * 22000;
+			battleCounter = Math.random() * 1000;
 			if (battleCounter <= 20) {
 				Game.sound.snd2.stop();
 				Game.sound.snd.play();
@@ -84,7 +84,7 @@ public class Player extends Mob {
 			if (input.right)
 				Game.currentBattle.changeSelectorNumberRight();
 			if (input.enter){
-
+				
 				Battle.battleQueue.enqueue(new Attack());
 				attacking = true;
 				
@@ -152,6 +152,19 @@ public class Player extends Mob {
 			if (animate % 30 > 20) {
 				sprite = Sprite.knight_right_2;
 			}
+			if(attacking){
+				xa += 30;
+				sprite = Sprite.knight_punch1;
+				if (animate % 40 < 10) {
+					sprite = Sprite.knight_punch2;
+				}
+				if (animate % 40 > 10 && animate % 40 <20) {
+					sprite = Sprite.knight_punch3;
+				}
+				if(animate % 40 > 20 && animate % 40 < 30){
+					sprite = Sprite.knight_punch4;
+				}
+			}
 		}
 		if (i == 2) {
 			sprite = Sprite.mage_right1;
@@ -160,6 +173,19 @@ public class Player extends Mob {
 			}
 			if (animate % 30 > 20) {
 				sprite = Sprite.mage_right3;
+			}
+			if(attacking){
+				xa += 30;
+				sprite = Sprite.mage_punch1;
+				if (animate % 40 < 10) {
+					sprite = Sprite.mage_punch2;
+				}
+				if (animate % 40 > 10 && animate % 40 <20) {
+					sprite = Sprite.mage_punch3;
+				}
+				if(animate % 40 > 20 && animate % 40 < 30){
+					sprite = Sprite.mage_punch4;
+				}
 			}
 		}
 		if (i == 3) {
@@ -170,7 +196,22 @@ public class Player extends Mob {
 			if (animate % 30 > 20) {
 				sprite = Sprite.archer_right3;
 			}
+			if(attacking){
+				xa += 30;
+				sprite = Sprite.archer_punch1;
+				if (animate % 40 < 10) {
+					sprite = Sprite.archer_punch2;
+				}
+				if (animate % 40 > 10 && animate % 40 <20) {
+					sprite = Sprite.archer_punch3;
+				}
+				if(animate % 40 > 20 && animate % 40 < 30){
+					sprite = Sprite.archer_punch4;
+				}
+			}
 		}
+		
+		
 		screen.renderMobInBattle(sprite, xa, ya, isTurn);
 		screen.renderNameAndHealthBar(hp);
 	}

@@ -20,6 +20,7 @@ int number;
 		super.update();
 		if (isTurn){
 		Battle.battleQueue.enqueue(new Attack());
+		attacking = true;
 		isTurn=false;
 		Game.currentBattle.nextTurn();
 		}

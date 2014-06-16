@@ -65,6 +65,17 @@ public class Battle {
 				if (players[i].animate % 100 < 2){
 				players[i].attacking = false;
 				}
+				
+			
+			}
+			if (enemies[i].attacking){
+				for (int j = 0; j < numberOfMobs;j++){
+					players[j].hp-=1;
+				}
+				if (enemies[i].animate % 100 < 2){
+				enemies[i].attacking = false;
+				}
+				
 			
 			}
 		}
