@@ -98,7 +98,7 @@ public class Screen {
 		}
 		if (x > 150){
 		for (int xa = 0; xa < Sprite.knight_left.SIZE; xa++) {
-			int xp = xa + x-16;
+			int xp = xa + x+16;
 			for (int ya = 0; ya < Sprite.knight_left.SIZE; ya++) {
 				int yp = ya + y;
 				int col = Sprite.knight_left.pixels[xa + ya * Sprite.knight_left.SIZE];
