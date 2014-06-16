@@ -2,6 +2,7 @@ package battle;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Queue;
 
 import javax.imageio.ImageIO;
 
@@ -22,10 +23,13 @@ public class Battle {
 	public static int numberOfMobs = 3;
 	private Keyboard key;
 	public int turnCounter;
+	public Queue battlequeue;
+	public int selectornumber;
 	
 	public Battle(){
 		players = new Player[numberOfMobs];
 		enemies = new Enemy[numberOfMobs];
+		selectornumber = 0;
 		for (int i = 0; i < players.length; i++){
 			players[i] = new Player(i);
 		}
@@ -47,8 +51,11 @@ public class Battle {
 			players[i].renderInBattle(screen, i+1);
 			enemies[i].renderInBattle(screen, i+1);
 		}
+		screen.renderSelector(selectornumber);
 
 	}
+	
+		
 	public void enterBattleAnimation(){
 		if (animationCounter < 180){
 			animationCounter++;

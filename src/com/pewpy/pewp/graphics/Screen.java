@@ -180,6 +180,10 @@ public class Screen {
 		}
 	}
 
+	public void renderSelector(int position){
+		
+	}
+	
 	public void setOffset(int xOffset, int yOffset) {
 		this.xOffset = xOffset;
 		this.yOffset = yOffset;
