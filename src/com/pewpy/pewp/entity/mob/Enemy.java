@@ -1,5 +1,8 @@
 package com.pewpy.pewp.entity.mob;
 
+import battle.Attack;
+import battle.Battle;
+
 import com.pewpy.pewp.Game;
 import com.pewpy.pewp.graphics.Screen;
 import com.pewpy.pewp.graphics.Sprite;
@@ -12,6 +15,14 @@ int number;
 		sprite = Sprite.knight_right;
 		isTurn = false;
 		hp = 100;
+	}
+	public void update(){
+		super.update();
+		if (isTurn){
+		Battle.battleQueue.enqueue(new Attack());
+		isTurn=false;
+		Game.currentBattle.nextTurn();
+		}
 	}
 	public void renderInBattle(Screen screen, int placement) {
 		int xa = Game.width-30-sprite.SIZE;
