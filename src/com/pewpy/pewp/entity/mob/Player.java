@@ -57,7 +57,11 @@ public class Player extends Mob {
 
 		super.update();
 		if (!Game.inBattle) {
+<<<<<<< HEAD
+			
+=======
 			//int xa = 0, ya = 0;
+>>>>>>> origin/master
 
 			if (input.up)
 				ya--;
@@ -67,7 +71,7 @@ public class Player extends Mob {
 				xa--;
 			if (input.right)
 				xa++;
-			battleCounter = Math.random() * 1000;// 22000
+			battleCounter = 21; /* Math.random() * 1000;// 22000 */
 			if (battleCounter <= 20) {
 				sound = new Sound(1);
 				System.out.println("IN BATTLE");
@@ -86,7 +90,10 @@ public class Player extends Mob {
 		}
 		}
 	}
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/master
 	
 	public void render(Screen screen){
 		if(dir == 0) {
@@ -127,8 +134,11 @@ public class Player extends Mob {
 					sprite = Sprite.knight_left_1;
 				}else{
 					sprite = Sprite.knight_left_2;
+<<<<<<< HEAD
+=======
 
 	
+>>>>>>> origin/master
 				}
 			}
 		}
