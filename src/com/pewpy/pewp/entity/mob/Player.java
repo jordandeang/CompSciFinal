@@ -49,7 +49,7 @@ public class Player extends Mob {
 				xa--;
 			if (input.right)
 				xa++;
-			battleCounter = 21; //Math.random() * 1000;// 22000
+			battleCounter = Math.random() * 1000;// 22000sd
 			if (battleCounter <= 20) {
 				sound = new Sound(1);
 				System.out.println("IN BATTLE");
@@ -146,7 +146,7 @@ public class Player extends Mob {
 			}
 		}
 		screen.renderMobInBattle(sprite, xa, ya, isTurn);
-		screen.renderHealthBar(hp);
+		screen.renderNameAndHealthBar(hp);
 	}
 
 }
