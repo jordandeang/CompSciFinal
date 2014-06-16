@@ -1,5 +1,6 @@
 package com.pewpy.pewp.graphics;
 
+import java.awt.Color;
 import java.util.Random;
 
 import com.pewpy.pewp.level.tile.Tile;
@@ -108,9 +109,27 @@ public class Screen {
 		}
 		}
 	}
+	public void renderHealthBar(int h){
+		for (int x = 60; x < 60 + (60*h/100); x++) {
+			for (int y = 108; y <113 ; y++) {
+				pixels[x + y * width] = 0xffFF0000;
+			}
+		}
+		for (int x = 60; x < 60 + (60*h/100); x++) {
+			for (int y = 123; y <128 ; y++) {
+				pixels[x + y * width] = 0xffFF0000;
+			}
+		}
+		for (int x = 60; x < 60 + (60*h/100); x++) {
+			for (int y = 138; y <143 ; y++) {
+				pixels[x + y * width] = 0xffFF0000;
+			}
+		}
+	}
 
 	public void setOffset(int xOffset, int yOffset) {
 		this.xOffset = xOffset;
 		this.yOffset = yOffset;
 	}
+	
 }

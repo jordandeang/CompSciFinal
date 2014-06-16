@@ -33,6 +33,7 @@ public class Player extends Mob {
 		turnNumber = i;
 		sprite = Sprite.knight_right;
 		isTurn = false;
+		hp = 100;
 	}
 
 	public void update() {
@@ -145,6 +146,7 @@ public class Player extends Mob {
 			}
 		}
 		screen.renderMobInBattle(sprite, xa, ya, isTurn);
+		screen.renderHealthBar(hp);
 	}
 
 }
