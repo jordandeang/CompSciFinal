@@ -2,13 +2,11 @@ package battle;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.Queue;
 
 import javax.imageio.ImageIO;
 
 import com.pewpy.pewp.Game;
 import com.pewpy.pewp.entity.mob.Enemy;
-import com.pewpy.pewp.entity.mob.Mob;
 import com.pewpy.pewp.entity.mob.Player;
 import com.pewpy.pewp.graphics.Screen;
 import com.pewpy.pewp.input.Keyboard;
@@ -23,7 +21,7 @@ public class Battle {
 	public static int numberOfMobs = 3;
 	private Keyboard key;
 	public int turnCounter;
-	public Queue battlequeue;
+	public static MyQueue battleQueue;
 	public static int selectorNumber;
 
 	public Battle(Keyboard key) {

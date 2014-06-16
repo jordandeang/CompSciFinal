@@ -1,5 +1,6 @@
 package com.pewpy.pewp.entity.mob;
 
+import battle.Attack;
 import battle.Battle;
 
 import com.pewpy.pewp.Game;
@@ -75,6 +76,9 @@ public class Player extends Mob {
 				Game.currentBattle.changeSelectorNumberLeft();
 			if (input.right)
 				Game.currentBattle.changeSelectorNumberRight();
+			if (input.enter){
+				Battle.battleQueue.enqueue(new Attack());
+			}
 		}
 		System.out.println(Game.currentBattle.selectorNumber);
 
