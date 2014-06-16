@@ -105,19 +105,22 @@ public class Game extends Canvas implements Runnable {
 	private void tick() {
 
 		if (inBattle) {
-			currentBattle.enterBattleAnimation();
+			
 			if (currentBattle.inBattleAnimation) {
+				currentBattle.enterBattleAnimation();
 				for (int i = (pixels.length* (currentBattle.animationCounter-1))/180;i < (pixels.length* currentBattle.animationCounter)/180; i++) {
 					pixels[i] = 0xff000000;
 					if (pixels[pixels.length-1] ==0xff000000){
 						currentBattle.inBattleAnimation = false;
+						System.out.println("NO LONGER IN BATTLE ANIMATION");
 					}
 				}
 			}
 		} else {
 			key.update();
-			player.update();
+			
 		}
+		player.update();
 
 	}
 
@@ -133,11 +136,18 @@ public class Game extends Canvas implements Runnable {
 			int yScroll = player.y - screen.height / 2;
 			level.render(xScroll, yScroll, screen);
 			player.render(screen);
-
+			for (int i = 0; i < pixels.length; i++) {
+				pixels[i] = screen.pixels[i];
+			}
+			
+		} 
+		if (inBattle && !currentBattle.inBattleAnimation){
+			currentBattle.render(screen);
 			for (int i = 0; i < pixels.length; i++) {
 				pixels[i] = screen.pixels[i];
 			}
 		}
+
 
 		Graphics g = bs.getDrawGraphics();
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
