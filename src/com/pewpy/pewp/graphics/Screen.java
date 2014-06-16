@@ -258,7 +258,7 @@ public class Screen {
 			int xp = xa + 200;
 			for (int ya = 0; ya < Sprite.defend.SIZE; ya++) {
 				int yp = ya + 125;
-				int col = Sprite.defend.pixels[xa + ya * Sprite.def.SIZE];
+				int col = Sprite.defend.pixels[xa + ya * Sprite.defend.SIZE];
 				if (col != 0xFF7bd5fe)
 					pixels[xp + yp * width] = col;
 			}
