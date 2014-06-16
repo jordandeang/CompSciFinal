@@ -23,11 +23,18 @@ public class Battle {
 	public int turnCounter;
 	public static MyQueue battleQueue;
 	public static int selectorNumber;
+	public Command[] commands;
 
 	public Battle(Keyboard key) {
+		battleQueue = new MyQueue();
 		this.key = key;
 		players = new Player[numberOfMobs];
 		enemies = new Enemy[numberOfMobs];
+		commands = new Command[4];
+		commands[0] = new Attack();
+		commands[1] = new Spell();
+		commands[2] = new Item();
+		commands[3] = new Defend();
 		selectorNumber = 0;
 		for (int i = 0; i < players.length; i++) {
 			players[i] = new Player(i, key);
@@ -48,7 +55,11 @@ public class Battle {
 			players[i].renderInBattle(screen, i + 1);
 			enemies[i].renderInBattle(screen, i + 1);
 		}
+		for (int j = 0; j < commands.length; j++){
+		commands[j].render(screen);
+		}
 		screen.renderSelector(selectorNumber);
+
 
 	}
 
