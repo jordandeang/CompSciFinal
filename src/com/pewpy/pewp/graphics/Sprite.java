@@ -169,6 +169,32 @@ public class Sprite {
 	public static Sprite hotman_cast3 = new Sprite(18,12,5,SpriteSheet.characters);
 	public static Sprite hotman_cast4 = new Sprite(18,13,5,SpriteSheet.characters);
 	
+	public static Sprite pirate_forward1 = new Sprite(18,7,8,SpriteSheet.characters);
+	public static Sprite pirate_forward2 = new Sprite(18,8,8,SpriteSheet.characters);
+	public static Sprite pirate_forward3 = new Sprite(18,9,8,SpriteSheet.characters);
+	
+	public static Sprite pirate_right1 = new Sprite(18,7,9,SpriteSheet.characters);
+	public static Sprite pirate_right2 = new Sprite(18,8,9,SpriteSheet.characters);
+	public static Sprite pirate_right3 = new Sprite(18,9,9,SpriteSheet.characters);
+	
+	public static Sprite pirate_back1 = new Sprite(18,7,10,SpriteSheet.characters);
+	public static Sprite pirate_back2 = new Sprite(18,8,10,SpriteSheet.characters);
+	public static Sprite pirate_back3 = new Sprite(18,9,10,SpriteSheet.characters);
+	
+	public static Sprite pirate_left1 = new Sprite(18,7,11,SpriteSheet.characters);
+	public static Sprite pirate_left2 = new Sprite(18,8,11,SpriteSheet.characters);
+	public static Sprite pirate_left3 = new Sprite(18,9,11,SpriteSheet.characters);
+	
+	public static Sprite pirate_punch1 = new Sprite(18,10,8,SpriteSheet.characters);
+	public static Sprite pirate_punch2 = new Sprite(18,11,8,SpriteSheet.characters);
+	public static Sprite pirate_punch3 = new Sprite(18,12,8,SpriteSheet.characters);
+	public static Sprite pirate_punch4 = new Sprite(18,13,8,SpriteSheet.characters);
+	
+	public static Sprite pirate_cast1 = new Sprite(18,10,9,SpriteSheet.characters);
+	public static Sprite pirate_cast2 = new Sprite(18,11,9,SpriteSheet.characters);
+	public static Sprite pirate_cast3 = new Sprite(18,12,9,SpriteSheet.characters);
+	public static Sprite pirate_cast4 = new Sprite(18,13,9,SpriteSheet.characters);
+	
 	
 	public Sprite(int size, int x, int y, SpriteSheet sheet) {
 		SIZE = size;

@@ -10,11 +10,11 @@ import com.pewpy.pewp.sound.Sound;
 
 public class Player extends Mob {
 
-	private Keyboard input;
-	private Sprite sprite;
+	protected Keyboard input;
+	protected Sprite sprite;
 
-	private boolean walking = false;
-	private double battleCounter = 0;
+	protected boolean walking = false;
+	protected double battleCounter = 0;
 	public static Sound sound;
 
 	public Player(Keyboard input) {
@@ -27,6 +27,9 @@ public class Player extends Mob {
 		this.y = y;
 		this.input = input;
 		sprite = Sprite.knight_forward;
+	}
+	public Player() {
+		sprite = Sprite.knight_right;
 	}
 
 	public void update() {
@@ -54,7 +57,11 @@ public class Player extends Mob {
 
 		super.update();
 		if (!Game.inBattle) {
+<<<<<<< HEAD
 			
+=======
+			//int xa = 0, ya = 0;
+>>>>>>> origin/master
 
 			if (input.up)
 				ya--;
@@ -83,6 +90,10 @@ public class Player extends Mob {
 		}
 		}
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 	
 	public void render(Screen screen){
 		if(dir == 0) {
@@ -123,10 +134,27 @@ public class Player extends Mob {
 					sprite = Sprite.knight_left_1;
 				}else{
 					sprite = Sprite.knight_left_2;
+<<<<<<< HEAD
+=======
+
+	
+>>>>>>> origin/master
 				}
 			}
 		}
 		screen.renderPlayer(sprite.SIZE, x, y, sprite);
 	}
 
+	public void renderInBattle(Screen screen, int i) {
+		int xa = 20;
+		int ya = 20;
+		System.out.println("player.renderInBattle");
+		sprite = Sprite.knight_right;
+		if (animate % 20 > 10) {
+			sprite = Sprite.knight_right_1;
+		} else {
+			sprite = Sprite.knight_right_2;
+		}
+		screen.renderMobInBattle(sprite,xa, ya);
+	}
 }

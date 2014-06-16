@@ -42,35 +42,46 @@ public class Screen {
 		}
 	}
 
-	public void renderPlayer(int size, int xp, int yp, Sprite sprite){
+	public void renderPlayer(int size, int xp, int yp, Sprite sprite) {
 		xp -= xOffset;
 		yp -= yOffset;
 		for (int y = 0; y < size; y++) {
 			int ya = y + yp;
 			for (int x = 0; x < size; x++) {
 				int xa = x + xp;
-				if (xa < -size || xa >= width || ya < 0
-						|| ya >= height)
+				if (xa < -size || xa >= width || ya < 0 || ya >= height)
 					break;
 				if (xa < 0)
 					xa = 0;
-				int col =  sprite.pixels[x+y * size];
-				if(col != 0xFF7bd5fe)
-				pixels[xa + ya * width] = col;
+				int col = sprite.pixels[x + y * size];
+				if (col != 0xFF7bd5fe)
+					pixels[xa + ya * width] = col;
 			}
 		}
 	}
-	public void renderMobInBattle(Sprite sprite){
+
+	public void renderMobInBattle(Sprite sprite, int x, int y) {
+		System.out.println("rendering mob in battle");
+		for (int xa = 0; xa< sprite.SIZE; xa++) {
+			int xp = xa+x;
+			for (int ya = 0; ya < sprite.SIZE; ya++) {
+				int yp = ya+y;
+				int col = sprite.pixels[xa + ya * sprite.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
 
 	}
-	public void renderBattle(int[] p){
-		for (int x = 0; x < width; x++){
-			for (int y = 0; y < height; y++){
-				pixels[x+y*width] = p[x+y*width];
+
+	public void renderBattle(int[] p) {
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				pixels[x + y * width] = p[x + y * width];
 			}
 		}
 	}
-	
+
 	public void setOffset(int xOffset, int yOffset) {
 		this.xOffset = xOffset;
 		this.yOffset = yOffset;
