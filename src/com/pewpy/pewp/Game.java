@@ -143,7 +143,6 @@ public class Game extends Canvas implements Runnable {
 		} 
 		if (inBattle && !currentBattle.inBattleAnimation){
 			currentBattle.render(screen);
-			player.renderInBattle(screen, 1);
 			for (int i = 0; i < pixels.length; i++) {
 				pixels[i] = screen.pixels[i];
 			}
