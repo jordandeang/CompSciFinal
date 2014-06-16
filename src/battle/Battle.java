@@ -24,44 +24,43 @@ public class Battle {
 	private Keyboard key;
 	public int turnCounter;
 	public Queue battlequeue;
-	public int selectornumber;
-	
-	public Battle(){
+	public static int selectorNumber;
+
+	public Battle(Keyboard key) {
+		this.key = key;
 		players = new Player[numberOfMobs];
 		enemies = new Enemy[numberOfMobs];
-		selectornumber = 0;
-		for (int i = 0; i < players.length; i++){
-			players[i] = new Player(i);
+		selectorNumber = 0;
+		for (int i = 0; i < players.length; i++) {
+			players[i] = new Player(i, key);
 		}
-		for (int j = 0; j < players.length; j++){
-			enemies[j] = new Enemy((int) (Math.random()*3)+1, j+3);
+		for (int j = 0; j < players.length; j++) {
+			enemies[j] = new Enemy((int) (Math.random() * 3) + 1, j + 3);
 		}
-		pixels = new int[Game.width*Game.height];
+		pixels = new int[Game.width * Game.height];
 		setTurn(0);
 		load();
 
 	}
-	
-	
-	
-	public void render(Screen screen){
+
+	public void render(Screen screen) {
 
 		screen.renderBattle(pixels);
-		for (int i = 0; i < numberOfMobs; i++){
-			players[i].renderInBattle(screen, i+1);
-			enemies[i].renderInBattle(screen, i+1);
+		for (int i = 0; i < numberOfMobs; i++) {
+			players[i].renderInBattle(screen, i + 1);
+			enemies[i].renderInBattle(screen, i + 1);
 		}
-		screen.renderSelector(selectornumber);
+		screen.renderSelector(selectorNumber);
 
 	}
-	
-		
-	public void enterBattleAnimation(){
-		if (animationCounter < 180){
+
+	public void enterBattleAnimation() {
+		if (animationCounter < 180) {
 			animationCounter++;
 		}
-	
+
 	}
+
 	private void load() {
 		try {
 			BufferedImage image = ImageIO.read(Battle.class
@@ -74,19 +73,55 @@ public class Battle {
 			e.printStackTrace();
 		}
 	}
-	public void setTurn(int t){
+
+	public void setTurn(int t) {
 		turnCounter = t;
-		for (int i = 0; i< numberOfMobs; i++){
-			if (players[i].turnNumber == turnCounter){
+		for (int i = 0; i < numberOfMobs; i++) {
+			if (players[i].turnNumber == turnCounter) {
 				players[i].isTurn = true;
 			}
-			if (enemies[i].turnNumber == turnCounter){
+			if (enemies[i].turnNumber == turnCounter) {
 				enemies[i].isTurn = true;
 			}
 		}
 	}
-	public void nextTurn(){
+
+	public void nextTurn() {
 		turnCounter++;
 		setTurn(turnCounter);
+	}
+
+	public void changeSelectorNumberRight() {
+		if (selectorNumber == 1 || selectorNumber == 3) {
+			changeSelectorNumberLeft();
+		} else {
+			selectorNumber++;
+		}
+	}
+
+	public void changeSelectorNumberLeft() {
+		if (selectorNumber == 0 || selectorNumber == 2) {
+			changeSelectorNumberRight();
+		} else {
+			selectorNumber--;
+		}
+	}
+
+	public void changeSelectorNumberUp() {
+		if (selectorNumber == 0 || selectorNumber == 1) {
+			changeSelectorNumberDown();
+		} else {
+			selectorNumber-=2;
+		}
+	}
+	public void changeSelectorNumberDown() {
+		if (selectorNumber == 2 || selectorNumber == 3) {
+			changeSelectorNumberUp();
+		} else {
+			selectorNumber+=2;
+		}
+	}
+	public int getSelectorNumber() {
+		return selectorNumber;
 	}
 }

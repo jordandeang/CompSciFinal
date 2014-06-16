@@ -29,11 +29,12 @@ public class Player extends Mob {
 		sprite = Sprite.knight_forward;
 	}
 
-	public Player(int i) {
+	public Player(int i, Keyboard input) {
 		turnNumber = i;
 		sprite = Sprite.knight_right;
 		isTurn = false;
 		hp = 100;
+		this.input = input;
 	}
 
 	public void update() {
@@ -65,7 +66,17 @@ public class Player extends Mob {
 				walking = false;
 			}
 
+		}else{
+			if (input.up)
+				Game.currentBattle.changeSelectorNumberUp();
+			if (input.down)
+				Game.currentBattle.changeSelectorNumberDown();
+			if (input.left)
+				Game.currentBattle.changeSelectorNumberLeft();
+			if (input.right)
+				Game.currentBattle.changeSelectorNumberRight();
 		}
+		System.out.println(Game.currentBattle.selectorNumber);
 
 	}
 

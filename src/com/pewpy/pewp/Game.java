@@ -39,7 +39,7 @@ public class Game extends Canvas implements Runnable {
 	private Level level;
 	private Player player;
 	public static boolean inBattle;
-	public Battle currentBattle;
+	public static Battle currentBattle;
 	public static Sound sound;
 
 	public Game() {
@@ -53,7 +53,7 @@ public class Game extends Canvas implements Runnable {
 		player = new Player(playerSpawn.x(), playerSpawn.y(), key);
 		player.init(level);
 		addKeyListener(key);
-		currentBattle = new Battle();
+		currentBattle = new Battle(key);
 	}
 
 	public synchronized void start() {
@@ -126,6 +126,7 @@ public class Game extends Canvas implements Runnable {
 			player.update();
 			
 		}
+		key.update();
 		
 
 	}
