@@ -48,16 +48,24 @@ public class Battle {
 	}
 
 	public void render(Screen screen) {
-
+		if (enemies[0].hp < 0 && enemies[1].hp < 0 && enemies[2].hp < 0){
+			Game.inBattle = false;
+			Game.sound.snd.stop();
+			Game.sound.snd2.play();
+		}
 		screen.renderBattle(pixels);
 		for (int i = 0; i < numberOfMobs; i++) {
 			players[i].renderInBattle(screen, i + 1);
 			enemies[i].renderInBattle(screen, i + 1);
 			if (players[i].attacking){
 				players[i].a.renderAttack(screen,players[i].turnNumber);
-				if (players[i].animate % 40 < 2){
+				for (int j = 0; j < numberOfMobs;j++){
+					enemies[j].hp-=1;
+				}
+				if (players[i].animate % 100 < 2){
 				players[i].attacking = false;
 				}
+			
 			}
 		}
 		for (int j = 0; j < commands.length; j++) {

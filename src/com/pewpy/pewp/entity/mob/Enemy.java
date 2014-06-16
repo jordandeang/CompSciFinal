@@ -14,7 +14,7 @@ int number;
 		number = i;
 		sprite = Sprite.knight_right;
 		isTurn = false;
-		hp = 100;
+		hp = 3000;
 	}
 	public void update(){
 		super.update();

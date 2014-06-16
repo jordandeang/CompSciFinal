@@ -16,7 +16,7 @@ public class Player extends Mob {
 
 	protected boolean walking = false;
 	protected double battleCounter = 0;
-	public static Sound sound;
+	
 
 
 	public Player(Keyboard input) {
@@ -57,9 +57,10 @@ public class Player extends Mob {
 				xa--;
 			if (input.right)
 				xa++;
-			battleCounter = Math.random() * 1000;// 22000sd
+			battleCounter = Math.random() * 22000;
 			if (battleCounter <= 20) {
-				sound = new Sound(1);
+				Game.sound.snd2.stop();
+				Game.sound.snd.play();
 				System.out.println("IN BATTLE");
 				Game.inBattle = true;
 				Battle.inBattleAnimation = true;

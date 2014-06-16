@@ -54,6 +54,8 @@ public class Game extends Canvas implements Runnable {
 		player.init(level);
 		addKeyListener(key);
 		currentBattle = new Battle(key);
+		sound = new Sound();
+		sound.snd2.play();
 	}
 
 	public synchronized void start() {
@@ -122,7 +124,7 @@ public class Game extends Canvas implements Runnable {
 			}
 
 		} else {
-			key.update();
+			
 			player.update();
 			
 		}
