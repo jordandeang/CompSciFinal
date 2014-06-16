@@ -29,8 +29,10 @@ public class Player extends Mob {
 		sprite = Sprite.knight_forward;
 	}
 
-	public Player() {
+	public Player(int i) {
+		turnNumber = i;
 		sprite = Sprite.knight_right;
+		isTurn = false;
 	}
 
 	public void update() {
@@ -142,6 +144,7 @@ public class Player extends Mob {
 				sprite = Sprite.archer_right3;
 			}
 		}
-		screen.renderMobInBattle(sprite, xa, ya);
+		screen.renderMobInBattle(sprite, xa, ya, isTurn);
 	}
+
 }
