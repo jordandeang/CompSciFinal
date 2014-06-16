@@ -10,6 +10,7 @@ import com.pewpy.pewp.entity.mob.Mob;
 import com.pewpy.pewp.entity.mob.Player;
 import com.pewpy.pewp.graphics.Screen;
 import com.pewpy.pewp.graphics.SpriteSheet;
+import com.pewpy.pewp.input.Keyboard;
 
 public class Battle {
 	private static String battleImagePath = "/textures/battle_background.png";
@@ -18,6 +19,8 @@ public class Battle {
 	public int[] pixels;
 	private Player player1,player2,player3;
 	private Mob mob1,mob2,mob3;
+	private Keyboard key;
+	
 	public Battle(){
 		player1 = new Player();
 	/*	player2 = new Player();
@@ -27,9 +30,10 @@ public class Battle {
 		mob3 = new Player();*/
 		pixels = new int[Game.width*Game.height];
 		load();
-	
-		
+
 	}
+	
+	
 	
 	public void render(Screen screen){
 		System.out.println("battle.render");
