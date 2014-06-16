@@ -60,9 +60,8 @@ public class Screen {
 			}
 		}
 	}
-	public void renderPlayerInBattle(Sprite sprite){
-		
-		
+	public void renderMobInBattle(Sprite sprite){
+
 	}
 	public void renderBattle(int[] p){
 		for (int x = 0; x < width; x++){

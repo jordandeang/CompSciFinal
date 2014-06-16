@@ -42,7 +42,7 @@ public class Player extends Mob {
 				xa--;
 			if (input.right)
 				xa++;
-			battleCounter = 21;//Math.random() * 1000;// 22000
+			battleCounter = Math.random() * 1000;// 22000
 			if (battleCounter <= 20) {
 				sound = new Sound(1);
 				System.out.println("IN BATTLE");
@@ -104,6 +104,5 @@ public class Player extends Mob {
 		}
 		screen.renderPlayer(sprite.SIZE, x, y, sprite);
 	}
-
 
 }
