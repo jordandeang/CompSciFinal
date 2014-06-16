@@ -66,7 +66,5 @@ public abstract class Mob extends Entity {
 	public void render() {
 
 	}
-	public void setTurnNumber(int i){
-		
-	}
+
 }

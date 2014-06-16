@@ -42,7 +42,7 @@ int number;
 				sprite = Sprite.pirate_left3;
 			}
 		}
-		screen.renderMobInBattle(sprite, xa, ya);
+		screen.renderMobInBattle(sprite, xa, ya, isTurn);
 	}
 
 }

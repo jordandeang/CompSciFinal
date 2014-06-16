@@ -44,8 +44,8 @@ public class Battle {
 
 		screen.renderBattle(pixels);
 		for (int i = 0; i < numberOfMobs; i++){
-			players[i].renderInBattle(screen, 3-i);
-			enemies[i].renderInBattle(screen, 3-i);
+			players[i].renderInBattle(screen, i+1);
+			enemies[i].renderInBattle(screen, i+1);
 		}
 
 	}

@@ -60,15 +60,18 @@ public class Screen {
 		}
 	}
 
-	public void renderMobInBattle(Sprite sprite, int x, int y) {
-		for (int xa = 0; xa< sprite.SIZE; xa++) {
-			int xp = xa+x;
+	public void renderMobInBattle(Sprite sprite, int x, int y, boolean turnCheck) {
+		for (int xa = 0; xa < sprite.SIZE; xa++) {
+			int xp = xa + x;
 			for (int ya = 0; ya < sprite.SIZE; ya++) {
-				int yp = ya+y;
+				int yp = ya + y;
 				int col = sprite.pixels[xa + ya * sprite.SIZE];
 				if (col != 0xFF7bd5fe)
 					pixels[xp + yp * width] = col;
 			}
+		}
+		if (turnCheck) {
+			renderTurnIndicator(x,y);
 		}
 
 	}
@@ -78,6 +81,31 @@ public class Screen {
 			for (int y = 0; y < height; y++) {
 				pixels[x + y * width] = p[x + y * width];
 			}
+		}
+	}
+
+	public void renderTurnIndicator(int x, int y) {
+		if (x < 150){
+		for (int xa = 0; xa < Sprite.knight_right.SIZE; xa++) {
+			int xp = xa + x-16;
+			for (int ya = 0; ya < Sprite.knight_right.SIZE; ya++) {
+				int yp = ya + y;
+				int col = Sprite.knight_right.pixels[xa + ya * Sprite.knight_right.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
+		}
+		if (x > 150){
+		for (int xa = 0; xa < Sprite.knight_left.SIZE; xa++) {
+			int xp = xa + x-16;
+			for (int ya = 0; ya < Sprite.knight_left.SIZE; ya++) {
+				int yp = ya + y;
+				int col = Sprite.knight_left.pixels[xa + ya * Sprite.knight_left.SIZE];
+				if (col != 0xFF7bd5fe)
+					pixels[xp + yp * width] = col;
+			}
+		}
 		}
 	}
 
