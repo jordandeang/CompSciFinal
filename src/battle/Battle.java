@@ -31,7 +31,7 @@ public class Battle {
 		players = new Player[numberOfMobs];
 		enemies = new Enemy[numberOfMobs];
 		commands = new Command[4];
-		commands[0] = new Attack();
+		commands[0] = new Attack(turnCounter);
 		commands[1] = new Spell();
 		commands[2] = new Item();
 		commands[3] = new Defend();

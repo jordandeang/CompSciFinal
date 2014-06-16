@@ -211,9 +211,9 @@ public class Sprite {
 	public static Sprite arrow = new Sprite(36, 4, 6 , SpriteSheet.characters);
 	public static Sprite fireball = new Sprite(36, 5, 6 , SpriteSheet.characters);
 	public static Sprite sword = new Sprite(36, 6, 6 , SpriteSheet.characters);
-	
 	public static Sprite boss = new Sprite(225,0,0,SpriteSheet.boss);
 
+	
 	public Sprite(int size, int x, int y, SpriteSheet sheet) {
 		SIZE = size;
 		this.x = x * size;

@@ -265,6 +265,19 @@ public class Screen {
 		}
 	}
 	
+	public void attackRender(int turnNumber, Sprite sprite){
+			for(int xa = 0; xa < sprite.SIZE; xa++){
+				int xp = xa + 100;
+				for (int ya = 0; ya < sprite.SIZE ; ya++) {
+					int yp = ya + 20;
+					int col = sprite.pixels[xa + ya * sprite.SIZE];
+					if (col != 0xFF7bd5fe)
+						pixels[xp + yp * width] = col;
+				}		
+			}
+		}
+	
+	
 	public void setOffset(int xOffset, int yOffset) {
 		this.xOffset = xOffset;
 		this.yOffset = yOffset;

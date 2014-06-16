@@ -11,7 +11,7 @@ import com.pewpy.pewp.sound.Sound;
 
 public class Player extends Mob {
 
-	protected Keyboard input;
+	public static Keyboard input;
 	protected Sprite sprite;
 
 	protected boolean walking = false;
@@ -77,7 +77,10 @@ public class Player extends Mob {
 			if (input.right)
 				Game.currentBattle.changeSelectorNumberRight();
 			if (input.enter){
-				Battle.battleQueue.enqueue(new Attack());
+
+				Battle.battleQueue.enqueue(new Attack(turnNumber));
+				
+				
 				isTurn=false;
 				Game.currentBattle.nextTurn();
 			}
