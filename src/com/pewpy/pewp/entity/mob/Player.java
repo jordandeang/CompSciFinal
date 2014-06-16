@@ -30,9 +30,32 @@ public class Player extends Mob {
 	}
 
 	public void update() {
+
+		int xa = 0, ya = 0;
+		if(animate < 7500) animate++; else animate = 0;
+		if(input.up) ya--;
+		if(input.down) ya++;
+		if(input.left) xa--;
+		if(input.right) xa++;
+		battleCounter = 21; /* Math.random()* 1000;//22000 */ 
+		if (battleCounter <= 20){
+			sound = new Sound(1);
+			System.out.println("IN BATTLE");
+			Game.inBattle = true;
+			Battle.inBattleAnimation = true;
+			
+			
+		}
+		
+		if(xa != 0 || ya != 0){
+			move(xa, ya);
+			walking = true;
+		} else {
+			walking = false;
+
 		super.update();
 		if (!Game.inBattle) {
-			int xa = 0, ya = 0;
+			//int xa = 0, ya = 0;
 
 			if (input.up)
 				ya--;
@@ -57,6 +80,8 @@ public class Player extends Mob {
 			} else {
 				walking = false;
 			}
+
+		}
 		}
 	}
 
