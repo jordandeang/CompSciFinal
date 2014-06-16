@@ -11,7 +11,7 @@ import com.pewpy.pewp.sound.Sound;
 
 public class Player extends Mob {
 
-	protected Keyboard input;
+	public static Keyboard input;
 	protected Sprite sprite;
 
 	protected boolean walking = false;
