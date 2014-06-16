@@ -1,4 +1,6 @@
 package com.pewpy.pewp.entity.mob;
+import battle.Battle;
+
 import com.pewpy.pewp.Game;
 import com.pewpy.pewp.graphics.Screen;
 import com.pewpy.pewp.graphics.Sprite;
@@ -33,11 +35,12 @@ public class Player extends Mob {
 		if(input.down) ya++;
 		if(input.left) xa--;
 		if(input.right) xa++;
-		battleCounter = 21; // Math.random()* 22000;//22000 
+		battleCounter = Math.random()* 1000;//22000 
 		if (battleCounter <= 20){
 			sound = new Sound(1);
 			System.out.println("IN BATTLE");
 			Game.inBattle = true;
+			Battle.inBattleAnimation = true;
 			
 			
 		}
