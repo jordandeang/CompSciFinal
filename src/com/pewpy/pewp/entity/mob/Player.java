@@ -28,6 +28,9 @@ public class Player extends Mob {
 		this.input = input;
 		sprite = Sprite.player_forward;
 	}
+	public Player() {
+		sprite = Sprite.player_right;
+	}
 
 	public void update() {
 		super.update();
@@ -105,4 +108,16 @@ public class Player extends Mob {
 		screen.renderPlayer(sprite.SIZE, x, y, sprite);
 	}
 
+	public void renderInBattle(Screen screen, int i) {
+		int xa = 20;
+		int ya = 20;
+		System.out.println("player.renderInBattle");
+		sprite = Sprite.player_right;
+		if (animate % 20 > 10) {
+			sprite = Sprite.player_right_1;
+		} else {
+			sprite = Sprite.player_right_2;
+		}
+		screen.renderMobInBattle(sprite,xa, ya);
+	}
 }
