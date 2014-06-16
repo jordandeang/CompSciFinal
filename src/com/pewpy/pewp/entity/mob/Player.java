@@ -30,7 +30,6 @@ public class Player extends Mob {
 	}
 
 	public void update() {
-<<<<<<< HEAD
 		int xa = 0, ya = 0;
 		if(animate < 7500) animate++; else animate = 0;
 		if(input.up) ya--;
@@ -52,10 +51,10 @@ public class Player extends Mob {
 			walking = true;
 		} else {
 			walking = false;
-=======
+
 		super.update();
 		if (!Game.inBattle) {
-			int xa = 0, ya = 0;
+			
 
 			if (input.up)
 				ya--;
@@ -65,7 +64,7 @@ public class Player extends Mob {
 				xa--;
 			if (input.right)
 				xa++;
-			battleCounter = Math.random() * 1000;// 22000
+			battleCounter = 21; /* Math.random() * 1000;// 22000 */
 			if (battleCounter <= 20) {
 				sound = new Sound(1);
 				System.out.println("IN BATTLE");
@@ -80,17 +79,17 @@ public class Player extends Mob {
 			} else {
 				walking = false;
 			}
->>>>>>> origin/master
+
+		}
 		}
 	}
-<<<<<<< HEAD
 	
 	public void render(Screen screen){
 		if(dir == 0) {
 			sprite = Sprite.knight_forward;
 			if(walking) {
 				if(animate % 20 > 10) {
-					sprite = Sprite.player_forward_1;
+					sprite = Sprite.knight_forward_1;
 				}else{
 					sprite = Sprite.knight_forward_2;
 				}
@@ -124,48 +123,6 @@ public class Player extends Mob {
 					sprite = Sprite.knight_left_1;
 				}else{
 					sprite = Sprite.knight_left_2;
-=======
-
-	public void render(Screen screen) {
-		if (dir == 0) {
-			sprite = Sprite.player_forward;
-			if (walking) {
-				if (animate % 20 > 10) {
-					sprite = Sprite.player_forward_1;
-				} else {
-					sprite = Sprite.player_forward_2;
-				}
-			}
-		}
-
-		if (dir == 1) {
-			sprite = Sprite.player_right;
-			if (walking) {
-				if (animate % 20 > 10) {
-					sprite = Sprite.player_right_1;
-				} else {
-					sprite = Sprite.player_right_2;
-				}
-			}
-		}
-		if (dir == 2) {
-			sprite = Sprite.player_back;
-			if (walking) {
-				if (animate % 20 > 10) {
-					sprite = Sprite.player_back_1;
-				} else {
-					sprite = Sprite.player_back_2;
-				}
-			}
-		}
-		if (dir == 3) {
-			sprite = Sprite.player_left;
-			if (walking) {
-				if (animate % 20 > 10) {
-					sprite = Sprite.player_left_1;
-				} else {
-					sprite = Sprite.player_left_2;
->>>>>>> FETCH_HEAD
 				}
 			}
 		}
