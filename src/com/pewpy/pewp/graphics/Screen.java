@@ -10,7 +10,6 @@ public class Screen {
 	public final int MAP_SIZE = 16;
 	public final int MAP_SIZE_MASK = MAP_SIZE - 1;
 	public int[] tiles = new int[MAP_SIZE * MAP_SIZE];
-	private Random random = new Random();
 	public int xOffset, yOffset;
 
 	public Screen(int w, int h) {
@@ -58,6 +57,14 @@ public class Screen {
 				int col =  sprite.pixels[x+y * size];
 				if(col != 0xFF7bd5fe)
 				pixels[xa + ya * width] = col;
+			}
+		}
+	}
+	
+	public void renderBattle(int[] p){
+		for (int x = 0; x < width; x++){
+			for (int y = 0; y < height; y++){
+				pixels[x+y*width] = p[x+y*width];
 			}
 		}
 	}

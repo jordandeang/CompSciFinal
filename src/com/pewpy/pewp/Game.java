@@ -105,6 +105,7 @@ public class Game extends Canvas implements Runnable {
 	private void tick() {
 
 		if (inBattle) {
+			
 			if (currentBattle.inBattleAnimation) {
 				currentBattle.enterBattleAnimation();
 				for (int i = (pixels.length* (currentBattle.animationCounter-1))/180;i < (pixels.length* currentBattle.animationCounter)/180; i++) {
@@ -134,11 +135,19 @@ public class Game extends Canvas implements Runnable {
 			int yScroll = player.y - screen.height / 2;
 			level.render(xScroll, yScroll, screen);
 			player.render(screen);
-
+			for (int i = 0; i < pixels.length; i++) {
+				pixels[i] = screen.pixels[i];
+			}
+			
+		} 
+		if (inBattle && !currentBattle.inBattleAnimation){
+			System.out.println("INBATTLE, ANIMATION OVER");
+			currentBattle.render(screen);
 			for (int i = 0; i < pixels.length; i++) {
 				pixels[i] = screen.pixels[i];
 			}
 		}
+
 
 		Graphics g = bs.getDrawGraphics();
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
