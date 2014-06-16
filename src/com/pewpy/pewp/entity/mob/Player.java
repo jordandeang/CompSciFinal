@@ -18,6 +18,7 @@ public class Player extends Mob {
 	protected double battleCounter = 0;
 	public static Sound sound;
 
+
 	public Player(Keyboard input) {
 		this.input = input;
 		sprite = Sprite.knight_forward;
@@ -35,7 +36,12 @@ public class Player extends Mob {
 		sprite = Sprite.knight_right;
 		isTurn = false;
 		hp = 100;
+		
+		
+		
+		
 		this.input = input;
+		a = new Attack();
 	}
 
 	public void update() {
@@ -78,8 +84,8 @@ public class Player extends Mob {
 				Game.currentBattle.changeSelectorNumberRight();
 			if (input.enter){
 
-				Battle.battleQueue.enqueue(new Attack(turnNumber));
-				
+				Battle.battleQueue.enqueue(new Attack());
+				attacking = true;
 				
 				isTurn=false;
 				Game.currentBattle.nextTurn();

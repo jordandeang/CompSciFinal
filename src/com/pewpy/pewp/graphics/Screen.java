@@ -275,6 +275,7 @@ public class Screen {
 						pixels[xp + yp * width] = col;
 				}		
 			}
+			
 		}
 	
 	

@@ -5,26 +5,25 @@ import java.util.List;
 import java.util.ListIterator;
 
 
-public class MyLinkedList<E> implements List<E> {
+public class MyLinkedList<Command> {
 
-	private MyLinkedListNode<E> head;
-	private MyLinkedListNode<E> tail;
+	private MyLinkedListNode<Command> head;
+	private MyLinkedListNode<Command> tail;
 	private int size;
-	@Override
-	public boolean add(E arg0) {
+	public boolean add(Command arg0) {
 		add(size(), arg0);
 		return false;
 	}
-	private class MyIterator<E> implements Iterator<E> {
+	private class MyIterator<Command> implements Iterator<Command> {
 		private int iterCounter;
 
 		public boolean hasNext() {	
 			return (iterCounter < size());
 		}
 
-		public E next() {
+		public Command next() {
 			iterCounter++;
-			return (E) get(iterCounter - 1);
+			return (Command) get(iterCounter - 1);
 		}
 
 		public void remove() {
@@ -32,9 +31,8 @@ public class MyLinkedList<E> implements List<E> {
 		}
 	}
 
-	@Override
-	public void add(int arg0, E arg1) {
-		MyLinkedListNode<E> newNode = new MyLinkedListNode<E>(arg1);
+	public void add(int arg0, Command arg1) {
+		MyLinkedListNode<Command> newNode = new MyLinkedListNode<Command>(arg1);
 		if (arg0 < size()) {
 			if (arg0 == 0) {
 				if (size() == 0){
@@ -46,7 +44,7 @@ public class MyLinkedList<E> implements List<E> {
 					head = newNode;
 				}
 			} else {
-				MyLinkedListNode<E> temp = head;
+				MyLinkedListNode<Command> temp = head;
 				for(int i = 0; i < arg0; i++){
 					temp = temp.getNext();
 				}
@@ -75,41 +73,9 @@ public class MyLinkedList<E> implements List<E> {
 
 	}
 
-	@Override
-	public boolean addAll(Collection<? extends E> arg0) {
-		for(E o:arg0){
-			add(o);
-		}
-		return false;
-	}
-
-	@Override
-	public boolean addAll(int arg0, Collection<? extends E> arg1) {
-		
-		return false;
-	}
-
-	@Override
-	public void clear() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean contains(Object arg0) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean containsAll(Collection<?> arg0) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public E get(int arg0) {
-		MyLinkedListNode<E> temp = head;
+	
+	public Command get(int arg0) {
+		MyLinkedListNode<Command> temp = head;
 		for (int i = 0; i < arg0; i++) {
 			if(temp != null)
 				temp = temp.getNext();
@@ -119,8 +85,7 @@ public class MyLinkedList<E> implements List<E> {
 		return null;
 	}
 
-	@Override
-	public int indexOf(Object arg0) {
+	public int indexOf(Command arg0) {
 		for(int i = 0; i < size(); i++){
 			if(get(i).equals(arg0)){
 				return i;
@@ -129,36 +94,16 @@ public class MyLinkedList<E> implements List<E> {
 		return 0;
 	}
 
-	@Override
 	public boolean isEmpty() {
 		return size == 0;
 	}
 
-	@Override
-	public Iterator<E> iterator() {
-		return new MyIterator<E>();
+	public Iterator<Command> iterator() {
+		return new MyIterator<Command>();
 	}
 
-	@Override
-	public int lastIndexOf(Object arg0) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-	@Override
-	public ListIterator<E> listIterator() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ListIterator<E> listIterator(int arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean remove(Object arg0) {
+	public boolean remove(Command arg0) {
 		for(int i = 0; i < size(); i++){
 			if(get(i).equals(arg0))
 				remove(i);
@@ -166,8 +111,7 @@ public class MyLinkedList<E> implements List<E> {
 		return false;
 	}
 
-	@Override
-	public E remove(int arg0) {
+	public Command remove(int arg0) {
 		if(arg0 == 0){
 			if(size() == 0)
 				head = null;
@@ -177,7 +121,7 @@ public class MyLinkedList<E> implements List<E> {
 			}
 		}
 		if(arg0 < size()){
-			MyLinkedListNode<E> temp = head;
+			MyLinkedListNode<Command> temp = head;
 			for(int i = 0; i < arg0; i++){
 				temp = temp.getNext();
 			}
@@ -194,22 +138,11 @@ public class MyLinkedList<E> implements List<E> {
 		return null;
 	}
 
-	@Override
-	public boolean removeAll(Collection<?> arg0) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
-	@Override
-	public boolean retainAll(Collection<?> arg0) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
-	@Override
-	public E set(int arg0, E arg1) {
+	public Command set(int arg0, Command arg1) {
 		if(arg0 < size()){
-			MyLinkedListNode<E> temp = head;
+			MyLinkedListNode<Command> temp = head;
 			for(int i = 0; i < arg0; i++){
 				temp = temp.getNext();
 			}
@@ -218,32 +151,14 @@ public class MyLinkedList<E> implements List<E> {
 		return null;
 	}
 
-	@Override
 	public int size() {
 		return size;
 	}
 
-	@Override
-	public List<E> subList(int arg0, int arg1) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public <T> T[] toArray(T[] arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	public String toString(){
 		String temp = "[";
-		MyLinkedListNode<E> tempNode = head;
+		MyLinkedListNode<Command> tempNode = head;
 		for(int i = 0; i < size() - 1; i++){
 			temp += tempNode.getData().toString();
 			temp += ", ";
@@ -254,5 +169,6 @@ public class MyLinkedList<E> implements List<E> {
 		return temp;
 	}
 
+	
 	
 }

@@ -6,12 +6,11 @@ import com.pewpy.pewp.graphics.Sprite;
 
 public class Attack extends Command {
 	public int damage;
-	public int turnnumber;
-	public Attack(int i) {
-		turnnumber = i;
+
+	public Attack() {
 	}
 	
-	public void render(Screen screen){
+	public void renderAttack(Screen screen, int turnnumber){
 		if(turnnumber == 0){
 			sprite = Sprite.sword;
 			damage = 10;
@@ -20,10 +19,11 @@ public class Attack extends Command {
 			sprite = Sprite.wand;
 			damage = 10;
 		}
+
 		if(turnnumber == 2){
 			sprite = Sprite.bow;
 			damage = 10;
 		}
-		if(Player.input.enter)screen.attackRender(turnnumber,sprite);
+		screen.attackRender(turnnumber,sprite);
 	}
 }

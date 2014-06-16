@@ -1,5 +1,7 @@
 package com.pewpy.pewp.entity.mob;
 
+import battle.Attack;
+
 import com.pewpy.pewp.Game;
 import com.pewpy.pewp.entity.Entity;
 import com.pewpy.pewp.graphics.Screen;
@@ -14,6 +16,8 @@ public abstract class Mob extends Entity {
 	public int turnNumber;
 	public boolean isTurn;
 	public int hp;
+	public boolean attacking;
+	public Attack a;
 
 	public void move(int xa, int ya) {
 		if (xa != 0 && ya != 0) {

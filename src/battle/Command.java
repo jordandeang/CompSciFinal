@@ -13,4 +13,5 @@ public class Command {
 	public void render(Screen screen){
 		screen.renderCommand(sprite);
 	}
+	
 }

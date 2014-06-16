@@ -23,7 +23,7 @@ public class Battle {
 	public int turnCounter;
 	public static MyQueue battleQueue;
 	public static int selectorNumber;
-	public Command[] commands;
+	public static Command[] commands;
 
 	public Battle(Keyboard key) {
 		battleQueue = new MyQueue();
@@ -31,7 +31,7 @@ public class Battle {
 		players = new Player[numberOfMobs];
 		enemies = new Enemy[numberOfMobs];
 		commands = new Command[4];
-		commands[0] = new Attack(turnCounter);
+		commands[0] = new Attack();
 		commands[1] = new Spell();
 		commands[2] = new Item();
 		commands[3] = new Defend();
@@ -53,12 +53,17 @@ public class Battle {
 		for (int i = 0; i < numberOfMobs; i++) {
 			players[i].renderInBattle(screen, i + 1);
 			enemies[i].renderInBattle(screen, i + 1);
+			if (players[i].attacking){
+				players[i].a.renderAttack(screen,players[i].turnNumber);
+				if (players[i].animate % 40 < 2){
+				players[i].attacking = false;
+				}
+			}
 		}
-		for (int j = 0; j < commands.length; j++){
-		commands[j].render(screen);
+		for (int j = 0; j < commands.length; j++) {
+			commands[j].render(screen);
 		}
 		screen.renderSelector(selectorNumber);
-
 
 	}
 
@@ -87,28 +92,28 @@ public class Battle {
 		for (int i = 0; i < numberOfMobs; i++) {
 			if (players[i].turnNumber == turnCounter) {
 				players[i].isTurn = true;
-			} else{
+			} else {
 				players[i].isTurn = false;
 			}
 			if (enemies[i].turnNumber == turnCounter) {
 				enemies[i].isTurn = true;
-			}else{
+			} else {
 				enemies[i].isTurn = false;
 			}
 		}
 	}
 
 	public void nextTurn() {
-	
-		if (turnCounter< 5){
+
+		if (turnCounter < 5) {
 			turnCounter++;
 			setTurn(turnCounter);
 		}
 
-		if (turnCounter == 5){
+		if (turnCounter == 5) {
 			turnCounter = 0;
 			setTurn(turnCounter);
-		}		
+		}
 	}
 
 	public void changeSelectorNumberRight() {
@@ -131,17 +136,21 @@ public class Battle {
 		if (selectorNumber == 0 || selectorNumber == 1) {
 			changeSelectorNumberDown();
 		} else {
-			selectorNumber-=2;
+			selectorNumber -= 2;
 		}
 	}
+
 	public void changeSelectorNumberDown() {
 		if (selectorNumber == 2 || selectorNumber == 3) {
 			changeSelectorNumberUp();
 		} else {
-			selectorNumber+=2;
+			selectorNumber += 2;
 		}
 	}
+
 	public int getSelectorNumber() {
 		return selectorNumber;
 	}
+
+
 }
