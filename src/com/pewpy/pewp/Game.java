@@ -118,8 +118,9 @@ public class Game extends Canvas implements Runnable {
 			}
 		} else {
 			key.update();
-			player.update();
+			
 		}
+		player.update();
 
 	}
 
@@ -141,8 +142,8 @@ public class Game extends Canvas implements Runnable {
 			
 		} 
 		if (inBattle && !currentBattle.inBattleAnimation){
-			System.out.println("INBATTLE, ANIMATION OVER");
 			currentBattle.render(screen);
+			player.renderInBattle(screen);
 			for (int i = 0; i < pixels.length; i++) {
 				pixels[i] = screen.pixels[i];
 			}

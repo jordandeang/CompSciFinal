@@ -1,6 +1,7 @@
 package com.pewpy.pewp.entity.mob;
 
 import com.pewpy.pewp.entity.Entity;
+import com.pewpy.pewp.graphics.Screen;
 import com.pewpy.pewp.graphics.Sprite;
 
 public abstract class Mob extends Entity {
@@ -8,6 +9,7 @@ public abstract class Mob extends Entity {
 	protected Sprite sprite;
 	protected int dir = 0;
 	protected boolean moving = false;
+	public int animate = 0;
 	
 
 	public void move(int xa, int ya) {
@@ -33,7 +35,10 @@ public abstract class Mob extends Entity {
 	}
 
 	public void update() {
-
+		if (animate < 7500)
+			animate++;
+		else
+			animate = 0;
 	}
 
 	private boolean collision(int xa, int ya) {
@@ -45,6 +50,15 @@ public abstract class Mob extends Entity {
 		}
 		
 		return solid;
+	}
+	public void renderInBattle(Screen screen) {
+		sprite = Sprite.player_right;
+		if (animate % 20 > 10) {
+			sprite = Sprite.player_right_1;
+		} else {
+			sprite = Sprite.player_right_2;
+		}
+		screen.renderPlayerInBattle(sprite);
 	}
 	
 	public void render(){
