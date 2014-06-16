@@ -25,12 +25,12 @@ public class Battle {
 	
 	public void render(Screen screen){
 		screen.renderBattle(pixels);
-		player1.renderInBattle(screen, 1);
-		player2.renderInBattle(screen, 2);
-		player3.renderInBattle(screen, 3);
-		mob1.renderInBattle(screen, 1);
-		mob2.renderInBattle(screen, 2);
-		mob3.renderInBattle(screen, 3);
+		//player1.renderInBattle(screen, 1);
+		//player2.renderInBattle(screen, 2);
+		//player3.renderInBattle(screen, 3);
+		//mob1.renderInBattle(screen, 1);
+		//mob2.renderInBattle(screen, 2);
+		//mob3.renderInBattle(screen, 3);
 	}
 	public void enterBattleAnimation(){
 		if (animationCounter < 180){
