@@ -48,7 +48,7 @@ public class Battle {
 	}
 
 	public void render(Screen screen) {
-		if (enemies[0].hp < 0 && enemies[1].hp < 0 && enemies[2].hp < 0){
+		if ((enemies[0].hp < 0 && enemies[1].hp < 0 && enemies[2].hp < 0) || (players[0].hp < 0 && players[1].hp < 0 && players[2].hp <2) ){
 			Game.inBattle = false;
 			Game.sound.snd.stop();
 			Game.sound.snd2.play();
